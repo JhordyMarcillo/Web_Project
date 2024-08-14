@@ -5,10 +5,15 @@
 <title>Documento sin título</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="CSS/estilo.css" rel="stylesheet" type="text/css">
+
+<link href="../CSS/estilo.css" rel="stylesheet" type="text/css">
+
 </head>
 <body class="w3-content" style="max-width:1200px">
 
@@ -25,88 +30,79 @@
     </a>
 	  
 	  
-    <a onclick="myAccFunc()" class="w3-button w3-block w3-white w3-left-align" id="myBtn" >
+    <a class="w3-button w3-block w3-white w3-left-align" id="myBtn">
       Frutas y Verduras <i class="fa fa-caret-down"></i>
     </a>
     <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
       <a href="#" class="w3-bar-item w3-button "><i></i>Frutas</a>
       <a href="#" class="w3-bar-item w3-button">Verduras</a>
       <a href="#" class="w3-bar-item w3-button">Condimientos</a>
-    </div>
+    </div>	  
 	  
-   <a onclick="myAccFuncBebidas()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align " id="myBtnBebidas">
-      Bebidas &nbsp;<i class="fa fa-caret-right"></i>
+    <a onclick="myAccFuncBebidas()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnBebidas">
+      Bebidas <i class="fa fa-caret-down"></i>
     </a>
     <div id="demoAccBebidas" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-      <a href="#" class="w3-bar-item w3-button">Alcoholicas</a>
+      <a href="#" class="w3-bar-item w3-button "><i></i>Alcoholicas</a>
       <a href="#" class="w3-bar-item w3-button">Gaseosas</a>
       <a href="#" class="w3-bar-item w3-button">Aguas</a>
-      <a href="#" class="w3-bar-item w3-button">Energizantes</a>
-      <a href="#" class="w3-bar-item w3-button">Jugos Naturales</a>
+      <a href="#" class="w3-bar-item w3-button "><i></i>Energizantes</a>
+      <a href="#" class="w3-bar-item w3-button "><i></i>Jugos Naturales</a>
     </div>
-	  
-	  
-	<a onclick="myAccFuncLacteos()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnLacteos">
+	  	  
+    <a onclick="myAccFuncLacteos()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnLacteos">
       Lacteos <i class="fa fa-caret-down"></i>
     </a>
     <div id="demoAccLacteos" class="w3-bar-block w3-hide w3-padding-large w3-medium">
       <a href="#" class="w3-bar-item w3-button "><i></i>Quesos</a>
       <a href="#" class="w3-bar-item w3-button">Leche</a>
       <a href="#" class="w3-bar-item w3-button">Yogurt</a>
+
     </div>
 	  
 	  
-    <a onclick="myAccFuncCongelados()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnCongelados">
-      Congelados <i class="fa fa-caret-down"></i>
+    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnCongelados">
+      Congelados <i class="fa fa-caret-right"></i>
     </a>
     <div id="demoAccCongelados" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-      <a href="#" class="w3-bar-item w3-button "><i></i>Helados</a>
-      <a href="#" class="w3-bar-item w3-button">Mariscos</a>
-      <a href="#" class="w3-bar-item w3-button">Fruta Congelada</a>
-      <a href="#" class="w3-bar-item w3-button">Vegetales Congelada</a>
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a>
+      <a href="#" class="w3-bar-item w3-button">Relaxed</a>
+      <a href="#" class="w3-bar-item w3-button">Bootcut</a>
+      <a href="#" class="w3-bar-item w3-button">Straight</a>
     </div>
 	  
 	  
-    <a onclick="myAccFuncCarnes()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnCarnes">
+    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnCarnes">
       Carnes <i class="fa fa-caret-right"></i>
     </a>
     <div id="demoAccCarnes" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-      <a href="#" class="w3-bar-item w3-button "><i></i>Pollo Entero</a>
-      <a href="#" class="w3-bar-item w3-button">Pechuga</a>
-      <a href="#" class="w3-bar-item w3-button">Carne Molida</a>
-      <a href="#" class="w3-bar-item w3-button">Muslos</a>
-      <a href="#" class="w3-bar-item w3-button">Res</a>
-      <a href="#" class="w3-bar-item w3-button">Chuleta</a>	
-	  <a href="#" class="w3-bar-item w3-button">Salchicas</a>
-	  <a href="#" class="w3-bar-item w3-button">Hamburguesas</a>
-	  <a href="#" class="w3-bar-item w3-button">Cualquier otra cosa</a>
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a>
+      <a href="#" class="w3-bar-item w3-button">Relaxed</a>
+      <a href="#" class="w3-bar-item w3-button">Bootcut</a>
+      <a href="#" class="w3-bar-item w3-button">Straight</a>
     </div>
 	  
 	  
-    <a onclick="myAccFuncPanificadora()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnPanificadora">
+    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnPanificadora">
       Panificadora <i class="fa fa-caret-right"></i>
     </a>
     <div id="demoAccPanificadora" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-      <a href="#" class="w3-bar-item w3-button "><i></i>Tortillas</a>
-      <a href="#" class="w3-bar-item w3-button">Pan</a>
-      <a href="#" class="w3-bar-item w3-button">Harina</a>
-      <a href="#" class="w3-bar-item w3-button">Crema de leche</a>
-	<a href="#" class="w3-bar-item w3-button">Levadura</a>
-	<a href="#" class="w3-bar-item w3-button">Polvo para Hornear</a>
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a>
+      <a href="#" class="w3-bar-item w3-button">Relaxed</a>
+      <a href="#" class="w3-bar-item w3-button">Bootcut</a>
+      <a href="#" class="w3-bar-item w3-button">Straight</a>
     </div>
 	  
 	  
 	  
-    <a onclick="myAccFuncConfiteria()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnConfiteria">
+    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnConfiteria">
       Confiteria <i class="fa fa-caret-right"></i>
     </a>
     <div id="demoAccConfiteria" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-      <a href="#" class="w3-bar-item w3-button "><i></i>Chupetes</a>
-      <a href="#" class="w3-bar-item w3-button">Chocolates</a>
-      <a href="#" class="w3-bar-item w3-button">Galletas</a>
-      <a href="#" class="w3-bar-item w3-button">Caramelos</a>
-      <a href="#" class="w3-bar-item w3-button">Gomitas</a>
-      <a href="#" class="w3-bar-item w3-button">Chicles</a>
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a>
+      <a href="#" class="w3-bar-item w3-button">Relaxed</a>
+      <a href="#" class="w3-bar-item w3-button">Bootcut</a>
+      <a href="#" class="w3-bar-item w3-button">Straight</a>
     </div>
 	  
 	  
@@ -133,7 +129,7 @@
   
   <!-- Top header -->
   <header class="w3-container w3-xlarge">
-    <p class="w3-left">Frutas y Verduras</p>
+    <p class="w3-left">Lacteos</p>
     <p class="w3-right">
       <i class="fa fa-shopping-cart w3-margin-right"></i>
       <i class="fa fa-search"></i>
@@ -142,13 +138,16 @@
 
   <!-- Image header -->
   <div class="w3-display-container w3-container">
-    <img src="Img/FrutasVerdurasPag.png" alt="Jeans" style="width:120%; margin-left: -40px">
+    <img src="" alt="Jeans" width="101%" height="378">
     <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
       <h1 style="color: black" class="w3-jumbo w3-hide-small">&nbsp;</h1>
-      <h1 style="color: white;margin-top: 50px" class="w3-jumbo w3-hide-small">Productos Frescos</h1>
+      <h1 style="color: white;margin-top: 20px" class="w3-jumbo w3-hide-small">Lacteos de la Mejor Calidad</h1>
     </div>
   </div>
 
+  <div class="w3-container w3-text-grey" id="jeans">
+    <p>8 items</p>
+  </div>
 
   <!-- Product grid -->
   <div class="w3-row">
@@ -156,22 +155,22 @@
     <div class="w3-col l3 s6">
       <div class="w3-container">
         <div class="w3-display-container">
-          <img src="Img/FrutasVerduras/Apio.jpg" style="width:100%">
+          <img src="" style="width:100%">
           <div class="w3-display-middle w3-display-hover">
             <button class="w3-button w3-black">Compra Ahora <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p>Apio Dedos Bandeja Guadaproducts 300 Gr <br><b>$0.62</b></p>
+        <p>Agua Sin Gas Dasani 600 ml.<br><b>$0.45</b></p>
       </div>
 		
       <div class="w3-container">
         <div class="w3-display-container">
-          <img src="Img/FrutasVerduras/brocoli.jpg" style="width:100%">
+          <img src="" style="width:100%">
           <div class="w3-display-middle w3-display-hover">
             <button class="w3-button w3-black">Compra Ahora <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p>Brócoli Uni<br><b>$0.50</b></p>
+        <p>Agua Con Gas Guitig 1.5 Lt<br><b>$0.86</b></p>
       </div>		
     </div>
 
@@ -180,22 +179,22 @@
      <div class="w3-col l3 s6">
       <div class="w3-container">
         <div class="w3-display-container">
-          <img src="Img/FrutasVerduras/cebolla.jpg" style="width:100%">
+          <img src="" style="width:100%">
           <div class="w3-display-middle w3-display-hover">
             <button class="w3-button w3-black">Compra Ahora <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p>Cebolla Perla Kg <br><b>$1.18</b></p>
+        <p>Agua Natural Tesalia 625 Ml <br><b>$0.49</b></p>
       </div>
 		
       <div class="w3-container">
         <div class="w3-display-container">
-          <img src="Img/FrutasVerduras/cebollaPaiteña.jpg" style="width:100%">
+          <img src="" style="width:100%">
           <div class="w3-display-middle w3-display-hover">
             <button class="w3-button w3-black">Compra Ahora <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p>Cebollas Mix Malla Oferta<br><b>$0.99</b></p>
+        <p>Agua Natural Tesalia 6 Lt<br><b>$1.74</b></p>
       </div>		
     </div>
 
@@ -203,137 +202,52 @@
       <div class="w3-col l3 s6">
       <div class="w3-container">
         <div class="w3-display-container">
-          <img src="Img/FrutasVerduras/Cebollin.jpg" style="width:100%">
+          <img src="" style="width:100%">
           <div class="w3-display-middle w3-display-hover">
             <button class="w3-button w3-black">Compra Ahora <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p>Cebollin Atado Uni<br><b>$0.41</b></p>
+        <p>Limonada Imperial Pet 1.5 Lt<br><b>$1.43</b></p>
       </div>
 		
       <div class="w3-container">
         <div class="w3-display-container">
-          <img src="Img/FrutasVerduras/Champiñon.jpg" style="width:100%">
+          <img src="" style="width:100%">
           <div class="w3-display-middle w3-display-hover">
             <button class="w3-button w3-black">Compra Ahora <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p>Champiñones Kennet Frescos Enteros Bandeja 400 Gr.<br><b>$2.87</b></p>
+        <p>Agua Gasificada Sabor A Toronjal Imperial 550<br><b>$0.75</b></p>
       </div>		
     </div>
 
     <div class="w3-col l3 s6">
       <div class="w3-container">
         <div class="w3-display-container">
-          <img src="Img/FrutasVerduras/Chochos.jpg" style="width:100%">
+          <img src="" style="width:100%">
           <div class="w3-display-middle w3-display-hover">
             <button class="w3-button w3-black">Compra Ahora <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p>Chocho Pasteurizado Salaito 60 Gr<br><b>$0.25</b></p>
+        <p>Agua Con Gas Guitig 3 Lt<br><b>$1.85</b></p>
       </div>
 		
       <div class="w3-container">
         <div class="w3-display-container">
-          <img src="Img/FrutasVerduras/Fresas.jpg" style="width:100%">
+          <img src="" style="width:100%">
           <div class="w3-display-middle w3-display-hover">
             <button class="w3-button w3-black">Compra Ahora <i class="fa fa-shopping-cart"></i></button>
           </div>
         </div>
-        <p>Frutilla Especial Bandeja Fresas Del Campo 50<br><b>$0.50</b></p>
+        <p>Pack X 3 Uni Bellows Whisky 750 Ml C/U<br><b>$31.88</b></p>
       </div>		
     </div>
 	  
 	  
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="Img/FrutasVerduras/Limon.jpg" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Compra Ahora <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p>Limón Sutil Kg<br><b>$1.58</b></p>
-      </div>
-		
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="Img/FrutasVerduras/Papas.jpg" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Compra Ahora <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p>Papa Chola Granel Kg<br><b>$1.19</b></p>
-      </div>		
-    </div>
 	  
-    <div class="w3-col l3 s6">
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="Img/FrutasVerduras/Papaya.jpg" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Compra Ahora <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p>Papaya Hawaiana Unidad<br><b>$0.89</b></p>
-      </div>
-		
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="Img/FrutasVerduras/PimientoVerde.jpg" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Compra Ahora <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p>Pimiento Verde Kg<br><b>$0.69</b></p>
-      </div>		
-    </div>
+
 	  
-<div class="w3-col l3 s6">
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="Img/FrutasVerduras/Piña.jpg" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Compra Ahora <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p>Piña Unidad<br><b>$0.94</b></p>
-      </div>
-		
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="Img/FrutasVerduras/platanos.jpg" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Compra Ahora <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p>Banano Seda Kg<br><b>$0.82</b></p>
-      </div>		
-    </div>
-	  
-	  
-<div class="w3-col l3 s6">
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="Img/FrutasVerduras/tomate.jpg" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Compra Ahora <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p>Tomate Riñón Kg<br><b>$0.87</b></p>
-      </div>
-		
-      <div class="w3-container">
-        <div class="w3-display-container">
-          <img src="Img/FrutasVerduras/zanahoria.jpg" style="width:100%">
-          <div class="w3-display-middle w3-display-hover">
-            <button class="w3-button w3-black">Compra Ahora <i class="fa fa-shopping-cart"></i></button>
-          </div>
-        </div>
-        <p>Zanahoria Amarilla Kg<br><b>$0.50</b></p>
-      </div>		
-    </div>
-	  
+
   </div>
 
   <!-- Subscribe section -->
@@ -409,7 +323,7 @@
   </div>
 </div>
 
-	<script src="Javascript/javaMenu.js" type="text/javascript"> </script>
+	<script src="../Javascript/javaMenu.js" type="text/javascript"> </script>
 
 </body>
 </html>
