@@ -30,14 +30,15 @@
     </a>
 	  
 	  
-    <a class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+    	  
+    <a onclick="myAccFunc()" class="w3-button w3-block w3-white w3-left-align" id="myBtn" >
       Frutas y Verduras <i class="fa fa-caret-down"></i>
     </a>
     <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-      <a href="#" class="w3-bar-item w3-button "><i></i>Frutas</a>
-      <a href="#" class="w3-bar-item w3-button">Verduras</a>
-      <a href="#" class="w3-bar-item w3-button">Condimientos</a>
-    </div>	  
+      <a href="../index.html" class="w3-bar-item w3-button "><i></i>Frutas</a>
+      <a href="../index.html" class="w3-bar-item w3-button">Verduras</a>
+      <a href="../index.html" class="w3-bar-item w3-button">Condimientos</a>
+    </div>
 	  
     <a onclick="myAccFuncBebidas()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnBebidas">
       Bebidas <i class="fa fa-caret-down"></i>
@@ -50,63 +51,73 @@
       <a href="#" class="w3-bar-item w3-button "><i></i>Jugos Naturales</a>
     </div>
 	  	  
-    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnLacteos">
-      Lacteos <i class="fa fa-caret-right"></i>
+	<a onclick="myAccFuncLacteos()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnLacteos">
+      Lacteos <i class="fa fa-caret-down"></i>
     </a>
     <div id="demoAccLacteos" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a>
-      <a href="#" class="w3-bar-item w3-button">Relaxed</a>
-      <a href="#" class="w3-bar-item w3-button">Bootcut</a>
-      <a href="#" class="w3-bar-item w3-button">Straight</a>
+      <a href="#" class="w3-bar-item w3-button "><i></i>Quesos</a>
+      <a href="#" class="w3-bar-item w3-button">Leche</a>
+      <a href="#" class="w3-bar-item w3-button">Yogurt</a>
     </div>
 	  
 	  
-    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnCongelados">
-      Congelados <i class="fa fa-caret-right"></i>
+    <a onclick="myAccFuncCongelados()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnCongelados">
+      Congelados <i class="fa fa-caret-down"></i>
     </a>
     <div id="demoAccCongelados" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a>
-      <a href="#" class="w3-bar-item w3-button">Relaxed</a>
-      <a href="#" class="w3-bar-item w3-button">Bootcut</a>
-      <a href="#" class="w3-bar-item w3-button">Straight</a>
+      <a href="#" class="w3-bar-item w3-button "><i></i>Helados</a>
+      <a href="#" class="w3-bar-item w3-button">Mariscos</a>
+      <a href="#" class="w3-bar-item w3-button">Fruta Congelada</a>
+      <a href="#" class="w3-bar-item w3-button">Vegetales Congelada</a>
     </div>
 	  
 	  
-    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnCarnes">
-      Carnes <i class="fa fa-caret-right"></i>
+    <a onclick="myAccFuncCarnes()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnCarnes">
+      Carnes <i class="fa fa-caret-down"></i>
     </a>
     <div id="demoAccCarnes" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a>
-      <a href="#" class="w3-bar-item w3-button">Relaxed</a>
-      <a href="#" class="w3-bar-item w3-button">Bootcut</a>
-      <a href="#" class="w3-bar-item w3-button">Straight</a>
+      <a href="#" class="w3-bar-item w3-button "><i></i>Pollo Entero</a>
+      <a href="#" class="w3-bar-item w3-button">Pechuga</a>
+      <a href="#" class="w3-bar-item w3-button">Carne Molida</a>
+      <a href="#" class="w3-bar-item w3-button">Muslos</a>
+      <a href="#" class="w3-bar-item w3-button">Res</a>
+      <a href="#" class="w3-bar-item w3-button">Chuleta</a>	
+	  <a href="#" class="w3-bar-item w3-button">Salchicas</a>
+	  <a href="#" class="w3-bar-item w3-button">Hamburguesas</a>
+	  <a href="#" class="w3-bar-item w3-button">Cualquier otra cosa</a>
     </div>
 	  
 	  
-    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnPanificadora">
-      Panificadora <i class="fa fa-caret-right"></i>
+    <a onclick="myAccFuncPanificadora()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnPanificadora">
+      Panificadora <i class="fa fa-caret-down"></i>
     </a>
     <div id="demoAccPanificadora" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a>
-      <a href="#" class="w3-bar-item w3-button">Relaxed</a>
-      <a href="#" class="w3-bar-item w3-button">Bootcut</a>
-      <a href="#" class="w3-bar-item w3-button">Straight</a>
+      <a href="#" class="w3-bar-item w3-button "><i></i>Tortillas</a>
+      <a href="#" class="w3-bar-item w3-button">Pan</a>
+      <a href="#" class="w3-bar-item w3-button">Harina</a>
+      <a href="#" class="w3-bar-item w3-button">Crema de leche</a>
+	<a href="#" class="w3-bar-item w3-button">Levadura</a>
+	<a href="#" class="w3-bar-item w3-button">Polvo para Hornear</a>
     </div>
 	  
 	  
 	  
-    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnConfiteria">
-      Confiteria <i class="fa fa-caret-right"></i>
+    <a onclick="myAccFuncConfiteria()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtnConfiteria">
+      Confiteria <i class="fa fa-caret-down"></i>
     </a>
     <div id="demoAccConfiteria" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a>
-      <a href="#" class="w3-bar-item w3-button">Relaxed</a>
-      <a href="#" class="w3-bar-item w3-button">Bootcut</a>
-      <a href="#" class="w3-bar-item w3-button">Straight</a>
+      <a href="#" class="w3-bar-item w3-button "><i></i>Chupetes</a>
+      <a href="#" class="w3-bar-item w3-button">Chocolates</a>
+      <a href="#" class="w3-bar-item w3-button">Galletas</a>
+      <a href="#" class="w3-bar-item w3-button">Caramelos</a>
+      <a href="#" class="w3-bar-item w3-button">Gomitas</a>
+      <a href="#" class="w3-bar-item w3-button">Chicles</a>
     </div>
 	  
-	  
+  
   </div>
+	
+	
   <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a> 
   <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a> 
   <a href="#footer"  class="w3-bar-item w3-button w3-padding">Subscribe</a>
