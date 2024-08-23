@@ -1,15 +1,9 @@
-/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-
 /**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS and IE text size adjust after device orientation change,
- *    without disabling user zoom.
+Establezca la familia de fuentes predeterminada en sans-serif.
  */
 
 html {
-  font-family: sans-serif; /* 1 */
-  -ms-text-size-adjust: 100%; /* 2 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  font-family: sans-serif;
 }
 
 /**
@@ -20,70 +14,44 @@ body {
   margin: 0;
 }
 
-/* HTML5 display definitions
-   ========================================================================== */
 
-/**
- * Correct `block` display not defined for any HTML5 element in IE 8/9.
- * Correct `block` display not defined for `details` or `summary` in IE 10/11
- * and Firefox.
- * Correct `block` display not defined for `main` in IE 11.
- */
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary {
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
 /**
- * 1. Correct `inline-block` display not defined in IE 8/9.
- * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+Corregir la visualización de `inline-block.
  */
 
-audio,
-canvas,
-progress,
-video {
-  display: inline-block; /* 1 */
-  vertical-align: baseline; /* 2 */
+audio, canvas, progress, video {
+  display: inline-block;
 }
 
 /**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
+Ocultar el elemento `template` en IE 8/9/10/11, Safari y Firefox < 22.
  */
 
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-/**
- * Address `[hidden]` styling not present in IE 8/9/10.
- * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
- */
-
-[hidden],
-template {
+[hidden], template {
   display: none;
 }
 
-/* Links
-   ========================================================================== */
+    /* Ocultar los marcadores de posición en navegadores WebKit (Chrome, Safari, Edge) */
+    input[type="date"]::-webkit-datetime-edit-year-field,
+    input[type="date"]::-webkit-datetime-edit-month-field,
+    input[type="date"]::-webkit-datetime-edit-day-field,
+    input[type="date"]::-webkit-datetime-edit-text {
+        color: transparent;
+    }
+
+    /* Mostrar el contenido real cuando el usuario escribe o selecciona una fecha */
+    input[type="date"]:focus::-webkit-datetime-edit-year-field,
+    input[type="date"]:focus::-webkit-datetime-edit-month-field,
+    input[type="date"]:focus::-webkit-datetime-edit-day-field {
+        color: initial;
+    }
 
 /**
- * Remove the gray background color from active links in IE 10.
+* Eliminar el color de fondo gris 
  */
 
 a {
@@ -91,37 +59,23 @@ a {
 }
 
 /**
- * Improve readability of focused elements when they are also in an
- * active/hover state.
+* Mejorar la legibilidad de los elementos enfocados
  */
 
-a:active,
-a:hover {
+a:active,a:hover {
   outline: 0;
 }
 
-/* Text-level semantics
-   ========================================================================== */
-
 /**
- * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ *estilo se establece en negrita
  */
 
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-/**
- * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
- */
-
-b,
-strong {
+b, strong {
   font-weight: bold;
 }
 
 /**
- * Address styling not present in Safari and Chrome.
+ * Etiquetas dfn, se establece la fuente italica
  */
 
 dfn {
@@ -129,8 +83,7 @@ dfn {
 }
 
 /**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari, and Chrome.
+ * Tamaño de fuente y el margen de h1
  */
 
 h1 {
@@ -159,8 +112,7 @@ small {
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
 
-sub,
-sup {
+sub, sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -175,8 +127,6 @@ sub {
   bottom: -0.25em;
 }
 
-/* Embedded content
-   ========================================================================== */
 
 /**
  * Remove border when inside `a` element in IE 8/9/10.

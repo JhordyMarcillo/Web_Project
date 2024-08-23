@@ -1,7 +1,3 @@
-<!-- 
-* Copyright 2018 Carlos Eduardo Alfaro Orellana
-  https://www.youtube.com/c/CarlosAlfaro007
--->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,79 +18,13 @@
 	<script src="js/main.js" ></script>
 </head>
 <body>
-	<!-- Notifications area -->
-	<section class="full-width container-notifications">
-		<div class="full-width container-notifications-bg btn-Notification"></div>
-	    <section class="NotificationArea">
-	        <div class="full-width text-center NotificationArea-title tittles">Notifications <i class="zmdi zmdi-close btn-Notification"></i></div>
-	        <a href="#" class="Notification" id="notifation-unread-1">
-	            <div class="Notification-icon"><i class="zmdi zmdi-accounts-alt bg-info"></i></div>
-	            <div class="Notification-text">
-	                <p>
-	                    <i class="zmdi zmdi-circle"></i>
-	                    <strong>New User Registration</strong> 
-	                    <br>
-	                    <small>Just Now</small>
-	                </p>
-	            </div>
-	        	<div class="mdl-tooltip mdl-tooltip--left" for="notifation-unread-1">Notification as UnRead</div> 
-	        </a>
-	        <a href="#" class="Notification" id="notifation-read-1">
-	            <div class="Notification-icon"><i class="zmdi zmdi-cloud-download bg-primary"></i></div>
-	            <div class="Notification-text">
-	                <p>
-	                    <i class="zmdi zmdi-circle-o"></i>
-	                    <strong>New Updates</strong> 
-	                    <br>
-	                    <small>30 Mins Ago</small>
-	                </p>
-	            </div>
-	            <div class="mdl-tooltip mdl-tooltip--left" for="notifation-read-1">Notification as Read</div>
-	        </a>
-	        <a href="#" class="Notification" id="notifation-unread-2">
-	            <div class="Notification-icon"><i class="zmdi zmdi-upload bg-success"></i></div>
-	            <div class="Notification-text">
-	                <p>
-	                    <i class="zmdi zmdi-circle"></i>
-	                    <strong>Archive uploaded</strong> 
-	                    <br>
-	                    <small>31 Mins Ago</small>
-	                </p>
-	            </div>
-	            <div class="mdl-tooltip mdl-tooltip--left" for="notifation-unread-2">Notification as UnRead</div>
-	        </a> 
-	        <a href="#" class="Notification" id="notifation-read-2">
-	            <div class="Notification-icon"><i class="zmdi zmdi-mail-send bg-danger"></i></div>
-	            <div class="Notification-text">
-	                <p>
-	                    <i class="zmdi zmdi-circle-o"></i>
-	                    <strong>New Mail</strong> 
-	                    <br>
-	                    <small>37 Mins Ago</small>
-	                </p>
-	            </div>
-	            <div class="mdl-tooltip mdl-tooltip--left" for="notifation-read-2">Notification as Read</div>
-	        </a>
-	        <a href="#" class="Notification" id="notifation-read-3">
-	            <div class="Notification-icon"><i class="zmdi zmdi-folder bg-primary"></i></div>
-	            <div class="Notification-text">
-	                <p>
-	                    <i class="zmdi zmdi-circle-o"></i>
-	                    <strong>Folder delete</strong> 
-	                    <br>
-	                    <small>1 hours Ago</small>
-	                </p>
-	            </div>
-	            <div class="mdl-tooltip mdl-tooltip--left" for="notifation-read-3">Notification as Read</div>
-	        </a>  
-	    </section>
-	</section>
+	
 	<!-- navLateral -->
 	<section class="full-width navLateral">
 		<div class="full-width navLateral-bg btn-menu"></div>
 		<div class="full-width navLateral-body">
 			<div class="full-width navLateral-body-logo text-center tittles">
-				<i class="zmdi zmdi-close btn-menu"></i> Inventory 
+				<i class="zmdi zmdi-close btn-menu"></i> Inventario
 			</div>
 			<figure class="full-width navLateral-body-tittle-menu">
 				<div>
@@ -102,8 +32,8 @@
 				</div>
 				<figcaption>
 					<span>
-						Full Name Admin<br>
-						<small>Admin</small>
+						Administrador<br>
+						<small>Administrador</small>
 					</span>
 				</figcaption>
 			</figure>
@@ -115,64 +45,11 @@
 								<i class="zmdi zmdi-view-dashboard"></i>
 							</div>
 							<div class="navLateral-body-cr">
-								HOME
+								Página Principal
 							</div>
 						</a>
 					</li>
 					<li class="full-width divider-menu-h"></li>
-					<li class="full-width">
-						<a href="#!" class="full-width btn-subMenu">
-							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-case"></i>
-							</div>
-							<div class="navLateral-body-cr">
-								ADMINISTRATION
-							</div>
-							<span class="zmdi zmdi-chevron-left"></span>
-						</a>
-						<ul class="full-width menu-principal sub-menu-options">
-							<li class="full-width">
-								<a href="company.html" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-balance"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										COMPANY
-									</div>
-								</a>
-							</li>
-							<li class="full-width">
-								<a href="providers.html" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-truck"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										PROVIDERS
-									</div>
-								</a>
-							</li>
-							<li class="full-width">
-								<a href="payments.html" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-card"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										PAYMENTS
-									</div>
-								</a>
-							</li>
-							<li class="full-width">
-								<a href="categories.html" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-label"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										CATEGORIES
-									</div>
-								</a>
-							</li>
-						</ul>
-					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
 						<a href="#!" class="full-width btn-subMenu">
@@ -180,7 +57,7 @@
 								<i class="zmdi zmdi-face"></i>
 							</div>
 							<div class="navLateral-body-cr">
-								USERS
+								Usuarios
 							</div>
 							<span class="zmdi zmdi-chevron-left"></span>
 						</a>
@@ -191,17 +68,17 @@
 										<i class="zmdi zmdi-account"></i>
 									</div>
 									<div class="navLateral-body-cr">
-										ADMINISTRATORS
+										Administradores
 									</div>
 								</a>
 							</li>
 							<li class="full-width">
-								<a href="client.html" class="full-width">
+								<a class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-accounts"></i>
 									</div>
 									<div class="navLateral-body-cr">
-										CLIENT
+										Clientes
 									</div>
 								</a>
 							</li>
@@ -214,7 +91,7 @@
 								<i class="zmdi zmdi-washing-machine"></i>
 							</div>
 							<div class="navLateral-body-cr">
-								PRODUCTS
+								Productos
 							</div>
 						</a>
 					</li>
@@ -225,7 +102,7 @@
 								<i class="zmdi zmdi-shopping-cart"></i>
 							</div>
 							<div class="navLateral-body-cr">
-								SALES
+								Ventas
 							</div>
 						</a>
 					</li>
@@ -236,44 +113,11 @@
 								<i class="zmdi zmdi-store"></i>
 							</div>
 							<div class="navLateral-body-cr">
-								INVENTORY
+								Inventario
 							</div>
 						</a>
 					</li>
 					<li class="full-width divider-menu-h"></li>
-					<li class="full-width">
-						<a href="#!" class="full-width btn-subMenu">
-							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-wrench"></i>
-							</div>
-							<div class="navLateral-body-cr">
-								SETTINGS
-							</div>
-							<span class="zmdi zmdi-chevron-left"></span>
-						</a>
-						<ul class="full-width menu-principal sub-menu-options">
-							<li class="full-width">
-								<a href="#!" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-widgets"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										OPTION
-									</div>
-								</a>
-							</li>
-							<li class="full-width">
-								<a href="#!" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-widgets"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										OPTION
-									</div>
-								</a>
-							</li>
-						</ul>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -284,18 +128,18 @@
 		<div class="full-width navBar">
 			<div class="full-width navBar-options">
 				<i class="zmdi zmdi-swap btn-menu" id="btn-menu"></i>	
-				<div class="mdl-tooltip" for="btn-menu">Hide / Show MENU</div>
+				<div class="mdl-tooltip" for="btn-menu">Mostrar / Esconder menu</div>
 				<nav class="navBar-options-list">
 					<ul class="list-unstyle">
 						<li class="btn-Notification" id="notifications">
 							<i class="zmdi zmdi-notifications"></i>
-							<div class="mdl-tooltip" for="notifications">Notifications</div>
+							<div class="mdl-tooltip" for="notifications">Notificaciones</div>
 						</li>
 						<li class="btn-exit" id="btn-exit">
 							<i class="zmdi zmdi-power"></i>
-							<div class="mdl-tooltip" for="btn-exit">LogOut</div>
+							<div class="mdl-tooltip" for="btn-exit">Salir</div>
 						</li>
-						<li class="text-condensedLight noLink" ><small>User Name</small></li>
+						<li class="text-condensedLight noLink" ><small>Admin</small></li>
 						<li class="noLink">
 							<figure>
 								<img src="assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
@@ -311,83 +155,100 @@
 			</div>
 			<div class="full-width header-well-text">
 				<p class="text-condensedLight">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut nulla accusantium minus corporis accusamus fuga harum natus molestias necessitatibus.
+					<h3 style="margin-top: 8%; margin-left: 10%"> Ingresar un nuevo cliente</h3>
 				</p>
 			</div>
 		</section>
 		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
 			<div class="mdl-tabs__tab-bar">
-				<a href="#tabNewClient" class="mdl-tabs__tab is-active">NEW</a>
-				<a href="#tabListClient" class="mdl-tabs__tab">LIST</a>
+				<a href="#tabNewClient" class="mdl-tabs__tab is-active">Agregar</a>
+				<a href="#tabListClient" class="mdl-tabs__tab">Mostrar</a>
 			</div>
 			<div class="mdl-tabs__panel is-active" id="tabNewClient">
 				<div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--12-col">
 						<div class="full-width panel mdl-shadow--2dp">
 							<div class="full-width panel-tittle bg-primary text-center tittles">
-								New client
+								Nuevo Cliente
 							</div>
 							<div class="full-width panel-content">
 								<form>
 									<div class="mdl-grid">
 										<div class="mdl-cell mdl-cell--12-col">
-									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; DATA CLIENT</legend><br>
+									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos Cliente</legend><br>
 									    </div>
 									    <div class="mdl-cell mdl-cell--12-col">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIClient">
-												<label class="mdl-textfield__label" for="DNIClient">DNI</label>
-												<span class="mdl-textfield__error">Invalid number</span>
+												<label class="mdl-textfield__label" for="DNIClient">Cedula</label>
+												<span class="mdl-textfield__error">Cedula Invalida</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameClient">
-												<label class="mdl-textfield__label" for="NameClient">Name</label>
-												<span class="mdl-textfield__error">Invalid name</span>
+												<label class="mdl-textfield__label" for="NameClient">Nombre</label>
+												<span class="mdl-textfield__error">Nombre Invalido</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameClient">
-												<label class="mdl-textfield__label" for="LastNameClient">Last Name</label>
-												<span class="mdl-textfield__error">Invalid last name</span>
+												<label class="mdl-textfield__label" for="LastNameClient">Apellido</label>
+												<span class="mdl-textfield__error">Apellido Invalido</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" id="addressClient1">
-												<label class="mdl-textfield__label" for="addressClient1">Address 1</label>
-												<span class="mdl-textfield__error">Invalid address</span>
-											</div>
-									    </div>
-									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" id="addressClient2">
-												<label class="mdl-textfield__label" for="addressClient2">Address 2</label>
-												<span class="mdl-textfield__error">Invalid address</span>
+												<label class="mdl-textfield__label" for="addressClient1">Direccion</label>
+												<span class="mdl-textfield__error">Direccion invalida</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneClient">
-												<label class="mdl-textfield__label" for="phoneClient">Phone</label>
-												<span class="mdl-textfield__error">Invalid phone number</span>
+												<label class="mdl-textfield__label" for="phoneClient">Telefono</label>
+												<span class="mdl-textfield__error">Telefono Invalido</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="email" id="emailClient">
-												<label class="mdl-textfield__label" for="emailClient">E-mail</label>
-												<span class="mdl-textfield__error">Invalid E-mail</span>
+												<label class="mdl-textfield__label" for="emailClient">Correo</label>
+												<span class="mdl-textfield__error">Correo electronico</span>
 											</div>
 									    </div>
+										
+										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<label for="select" style="color: #A3A3A3; font-family: sans-serif; font-size: 15px; " class="mdl-typography--menu">
+													Estado Civil: 
+													<select style="margin-left: 6%; display: inline-block; width: 40%; padding: 6px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; box-sizing: border-box;" 
+
+													name="estado" id="estado" required>
+														 <option value="" disabled selected>Escoga una opcion</option>
+														<option value="Soltero">Soltero</option>
+														<option value="Casado">Casado</option>
+														<option value="Viudo">Viudo</option>
+													</select>
+												</label>												
+											</div>
+									    </div>
+										
+										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+												<input class="mdl-textfield__input" type="date" id="dateAdmin">
+												<label class="mdl-textfield__label" for="dateAdmin">Fecha de Nacimiento</label>
+												<span class="mdl-textfield__error">Fecha Invalida</span>
+											</div>
+										</div>
 									</div>
 									<p class="text-center">
 										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addClient">
 											<i class="zmdi zmdi-plus"></i>
 										</button>
-										<div class="mdl-tooltip" for="btn-addClient">Add client</div>
+										<div class="mdl-tooltip" for="btn-addClient">Añadir Cliente</div>
 									</p>
 								</form>
 							</div>
@@ -400,7 +261,7 @@
 					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
 						<div class="full-width panel mdl-shadow--2dp">
 							<div class="full-width panel-tittle bg-success text-center tittles">
-								List Clients
+								Listado de Clientes
 							</div>
 							<div class="full-width panel-content">
 								<form action="#">
