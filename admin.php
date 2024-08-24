@@ -1,7 +1,4 @@
-<!-- 
-* Copyright 2018 Carlos Eduardo Alfaro Orellana
-  https://www.youtube.com/c/CarlosAlfaro007
--->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -40,7 +37,7 @@
 					</span>
 				</figcaption>
 			</figure>
-			<nav class="full-width">
+						<nav class="full-width">
 				<ul class="full-width list-unstyle menu-principal">
 					<li class="full-width">
 						<a href="home.html" class="full-width">
@@ -66,7 +63,7 @@
 						</a>
 						<ul class="full-width menu-principal sub-menu-options">
 							<li class="full-width">
-								<a class="full-width">
+								<a href="admin.php" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-account"></i>
 									</div>
@@ -106,6 +103,17 @@
 							</div>
 							<div class="navLateral-body-cr">
 								Ventas
+							</div>
+						</a>
+					</li>
+					<li class="full-width divider-menu-h"></li>
+					<li class="full-width">
+						<a href="providers.html" class="full-width">
+							<div class="navLateral-body-cl">
+								<i class="zmdi zmdi-shopping-cart"></i>
+							</div>
+							<div class="navLateral-body-cr">
+								Proveedores
 							</div>
 						</a>
 					</li>
@@ -159,7 +167,7 @@
 			</div>
 			<div class="full-width header-well-text">
 				<p class="text-condensedLight">
-				<h3 style="margin-top: 8%; margin-left: 10%"> Ingresar un nuevo administrador</h3>
+				<h3 style="margin-top: 8%; margin-left: 10%"> Ingresar un nuevo colaborador</h3>
 				</p>
 			</div>
 		</section>
@@ -173,13 +181,13 @@
 					<div class="mdl-cell mdl-cell--12-col">
 						<div class="full-width panel mdl-shadow--2dp">
 							<div class="full-width panel-tittle bg-primary text-center tittles">
-								Nuevo Administrador
+								Nuevo Colaborador
 							</div>
 							<div class="full-width panel-content">
 								<form>
 									<div class="mdl-grid">
 										<div class="mdl-cell mdl-cell--12-col">
-									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos del administrador</legend><br>
+									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos del colaborador</legend><br>
 									    </div>
 									    <div class="mdl-cell mdl-cell--12-col">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -229,7 +237,7 @@
 													Estado Civil: 
 													<select style="margin-left: 6%; display: inline-block; width: 40%; padding: 6px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; box-sizing: border-box;" 
 
-													name="estado" id="estado" required>
+													name="estado" id="estado" >
 														 <option value="" disabled selected>Escoga una opcion</option>
 														<option value="Soltero">Soltero</option>
 														<option value="Casado">Casado</option>
@@ -257,6 +265,20 @@
 												<span class="mdl-textfield__error">Usuario Invalido</span>
 											</div>
 										</div>
+										
+		<!-- No redirecciona a Rol.php -->		
+<div class="mdl-cell mdl-cell--6-col mdl-cell--9-col-tablet">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <label style="margin-left: 10%; width: 80px" class="mdl-textfield__label" for="addRol">Agregar rol</label>
+        <a href="Rol.php" style="margin-left: 12%;">
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addRol">
+                <i class="zmdi zmdi-assignment-check"></i>
+            </button>
+        </a>
+    </div>
+</div>
+
+
 										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="password" id="passwordAdmin">

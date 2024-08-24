@@ -1,7 +1,4 @@
-<!-- 
-* Copyright 2018 Carlos Eduardo Alfaro Orellana
-  https://www.youtube.com/c/CarlosAlfaro007
--->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -22,8 +19,6 @@
 	<script src="js/main.js" ></script>
 </head>
 <body>
-	<!-- Notifications area -->
-
 	<!-- navLateral -->
 	<section class="full-width navLateral">
 		<div class="full-width navLateral-bg btn-menu"></div>
@@ -132,28 +127,7 @@
 								Inventario
 							</div>
 						</a>
-						<ul class="full-width menu-principal sub-menu-options">
-							<li class="full-width">
-								<a href="#!" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-widgets"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										OPTION
-									</div>
-								</a>
-							</li>
-							<li class="full-width">
-								<a href="#!" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-widgets"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										OPTION
-									</div>
-								</a>
-							</li>
-						</ul>
+
 					</li>
 					<li class="full-width divider-menu-h"></li>
 				</ul>
@@ -193,7 +167,7 @@
 			</div>
 			<div class="full-width header-well-text">
 				<p class="text-condensedLight">
-				<h3 style="margin-top: 8%; margin-left: 10%"> Ingresar un nuevo proveedor</h3>
+				<h3 style="margin-top: 8%; margin-left: 10%"> Ingresar un nuevo colaborador</h3>
 				</p>
 			</div>
 		</section>
@@ -207,57 +181,59 @@
 					<div class="mdl-cell mdl-cell--12-col">
 						<div class="full-width panel mdl-shadow--2dp">
 							<div class="full-width panel-tittle bg-primary text-center tittles">
-								Nuevo Proveedor
+								Nuevo Colaborador
 							</div>
 							<div class="full-width panel-content">
 								<form>
 									<div class="mdl-grid">
 										<div class="mdl-cell mdl-cell--12-col">
-									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; DATA PROVIDER</legend><br>
+									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos Colaborador</legend><br>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">	
 												<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIProvider">
-												<label class="mdl-textfield__label" for="DNIProvider">DNI</label>
-												<span class="mdl-textfield__error">Invalid number</span>
+												<label class="mdl-textfield__label" for="DNIProvider">ID PERFIL</label>
+												<span class="mdl-textfield__error">Numero Invalido</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9 ]*(\.[0-9]+)?" id="NameProvider">
-												<label class="mdl-textfield__label" for="NameProvider">Name</label>
-												<span class="mdl-textfield__error">Invalid name</span>
+												<label class="mdl-textfield__label" for="NameProvider">Nombre</label>
+												<span class="mdl-textfield__error">Nombre Invalido</span>
 											</div>
 									    </div>
-									    <div class="mdl-cell mdl-cell--12-col">
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" id="addressProvider">
-												<label class="mdl-textfield__label" for="addressProvider">Address</label>
-												<span class="mdl-textfield__error">Invalid address</span>
-											</div>
-									    </div>
-									    <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneProvider">
-												<label class="mdl-textfield__label" for="phoneProvider">Phone</label>
-												<span class="mdl-textfield__error">Invalid phone number</span>
-											</div>
-									    </div>
-									    <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="email" id="emailProvider">
-												<label class="mdl-textfield__label" for="emailProvider">E-mail</label>
-												<span class="mdl-textfield__error">Invalid E-mail</span>
-											</div>
-									    </div>
-									    <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" id="webProvider">
-												<label class="mdl-textfield__label" for="webProvider">Web</label>
-												<span class="mdl-textfield__error">Invalid web address</span>
-											</div>
-									    </div>
+									    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+            <!-- Contenedor de textareas dinámicos -->
+            <div id="textareas-container">
+                <!-- Los textareas se agregarán aquí dinámicamente -->
+            </div>
+        </div>
+
+        <div style="color: rgba(189,189,189,1.00)" class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <label for="phoneProvider" style="color: ">Roles</label>
+                <hr style="width: 30%; margin-top: 0.1%">
+                <p>
+                    <input class="checkbox" type="checkbox" name="pasatiempo" id="checkbox1" value="cv1" onchange="updateTextareas()">
+                    <label for="checkbox1">Checkbox1</label><br><br>
+                    <input class="checkbox" type="checkbox" name="pasatiempo" id="checkbox2" value="cv2" onchange="updateTextareas()">
+                    <label for="checkbox2">Checkbox2</label><br><br><br>
+                    <input class="checkbox" type="checkbox" name="pasatiempo" id="checkbox3" value="cv3" onchange="updateTextareas()">
+                    <label for="checkbox3">Checkbox3</label><br>
+                    <input class="checkbox" type="checkbox" name="pasatiempo" id="checkbox4" value="cv4" onchange="updateTextareas()">
+                    <label for="checkbox4">Checkbox4</label><br>
+                    <input class="checkbox" type="checkbox" name="pasatiempo" id="checkbox5" value="cv5" onchange="updateTextareas()">
+                    <label for="checkbox5">Checkbox5</label>
+                </p>
+                <div id="checkboxError" class="error"></div>
+            </div>
+        </div>
+    </div>									
 									</div>
+								
+									
 									<p class="text-center">
 										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addProvider">
 											<i class="zmdi zmdi-plus"></i>
@@ -362,4 +338,49 @@
 		</div>
 	</section>
 </body>
+ <script>
+        function updateTextareas() {
+            // Obtener el contenedor de textareas
+            const container = document.getElementById('textareas-container');
+            // Limpiar el contenedor
+            container.innerHTML = '';
+
+            // Obtener todos los checkboxes
+            const checkboxes = document.querySelectorAll('.checkbox');
+            let atLeastOneChecked = false; // Variable para verificar si al menos un checkbox está marcado
+
+            checkboxes.forEach((checkbox) => {
+                if (checkbox.checked) {
+                    atLeastOneChecked = true; // Al menos un checkbox está marcado
+                    // Crear un nuevo div para el textarea
+                    const div = document.createElement('div');
+                    div.className = 'text-area-container';
+
+                    // Crear el textarea
+                    const textarea = document.createElement('textarea');
+                    textarea.className = 'mdl-textfield mdl-js-textfield mdl-textfield--floating-label';
+                    textarea.style.width = '500px';
+					textarea.style.height = '50px';
+					textarea.style.marginTop = '20px';
+                    textarea.placeholder = `Descripción`;
+
+                    // Añadir el textarea al div
+                    div.appendChild(textarea);
+                    
+                    // Añadir el div al contenedor
+                    container.appendChild(div);
+                }
+            });
+
+			
+            // Manejar el mensaje de error si no hay checkboxes seleccionados
+            const errorDiv = document.getElementById('checkboxError');
+            if (atLeastOneChecked) {
+                errorDiv.textContent = ''; // Limpiar el mensaje de error si hay checkboxes seleccionados
+            } else {
+                errorDiv.textContent = 'Por favor, seleccione al menos un checkbox para agregar descripciones.';
+            }
+        }
+    </script>
+
 </html>

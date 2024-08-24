@@ -37,7 +37,7 @@
 					</span>
 				</figcaption>
 			</figure>
-			<nav class="full-width">
+						<nav class="full-width">
 				<ul class="full-width list-unstyle menu-principal">
 					<li class="full-width">
 						<a href="home.html" class="full-width">
@@ -63,7 +63,7 @@
 						</a>
 						<ul class="full-width menu-principal sub-menu-options">
 							<li class="full-width">
-								<a href="admin.html" class="full-width">
+								<a href="admin.php" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-account"></i>
 									</div>
@@ -73,7 +73,7 @@
 								</a>
 							</li>
 							<li class="full-width">
-								<a class="full-width">
+								<a href="client.php" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-accounts"></i>
 									</div>
@@ -103,6 +103,17 @@
 							</div>
 							<div class="navLateral-body-cr">
 								Ventas
+							</div>
+						</a>
+					</li>
+					<li class="full-width divider-menu-h"></li>
+					<li class="full-width">
+						<a href="providers.html" class="full-width">
+							<div class="navLateral-body-cl">
+								<i class="zmdi zmdi-shopping-cart"></i>
+							</div>
+							<div class="navLateral-body-cr">
+								Proveedores
 							</div>
 						</a>
 					</li>
