@@ -183,51 +183,45 @@
 								Nuevo Cliente
 							</div>
 							<div class="full-width panel-content">
-								<form>
+								<form id="form1" name="form1" method="post" action="conexion.php">
 									<div class="mdl-grid">
 										<div class="mdl-cell mdl-cell--12-col">
 									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos Cliente</legend><br>
 									    </div>
 									    <div class="mdl-cell mdl-cell--12-col">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIClient">
-												<label class="mdl-textfield__label" for="DNIClient">Cedula</label>
-												<span class="mdl-textfield__error">Cedula Invalida</span>
+												<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="cedula">
+												<label class="mdl-textfield__label" for="cedula">Cedula</label>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameClient">
 												<label class="mdl-textfield__label" for="NameClient">Nombre</label>
-												<span class="mdl-textfield__error">Nombre Invalido</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameClient">
 												<label class="mdl-textfield__label" for="LastNameClient">Apellido</label>
-												<span class="mdl-textfield__error">Apellido Invalido</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="text" id="addressClient1">
 												<label class="mdl-textfield__label" for="addressClient1">Direccion</label>
-												<span class="mdl-textfield__error">Direccion invalida</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneClient">
 												<label class="mdl-textfield__label" for="phoneClient">Telefono</label>
-												<span class="mdl-textfield__error">Telefono Invalido</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="email" id="emailClient">
 												<label class="mdl-textfield__label" for="emailClient">Correo</label>
-												<span class="mdl-textfield__error">Correo electronico</span>
 											</div>
 									    </div>
 										
@@ -251,7 +245,6 @@
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 												<input class="mdl-textfield__input" type="date" id="dateAdmin">
 												<label class="mdl-textfield__label" for="dateAdmin">Fecha de Nacimiento</label>
-												<span class="mdl-textfield__error">Fecha Invalida</span>
 											</div>
 										</div>
 									</div>
