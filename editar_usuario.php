@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Clients</title>
+	<title>Administrators</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/sweetalert2.css">
 	<link rel="stylesheet" href="css/material.min.css">
@@ -152,6 +153,7 @@
 			</nav>
 		</div>
 	</section>
+	
 	<!-- pageContent -->
 	<section class="full-width pageContent">
 		<!-- navBar -->
@@ -181,129 +183,180 @@
 		</div>
 		<section class="full-width header-well">
 			<div class="full-width header-well-icon">
-				<i class="zmdi zmdi-accounts"></i>
+				<i class="zmdi zmdi-account"></i>
 			</div>
 			<div class="full-width header-well-text">
 				<p class="text-condensedLight">
-					<h3 style="margin-top: 8%; margin-left: 10%"> Modificar Usuarios Creados</h3>
+				<h3 style="margin-top: 8%; margin-left: 10%"> Modificar usuario</h3>
 				</p>
 			</div>
 		</section>
 		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-			<div class="mdl-tabs__tab-bar">
-				<a href="#tabListClient" class="mdl-tabs__tab">Mostrar</a>
-			</div>
 
-			<div class="mdl-tabs__panel" id="tabListClient">
+			<div class="mdl-tabs__panel is-active" id="tabNewAdmin">
 				<div class="mdl-grid">
-					<div style="width: 100%; margin-left: -2px" class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
+					<div class="mdl-cell mdl-cell--12-col">
 						<div class="full-width panel mdl-shadow--2dp">
-							<div class="full-width panel-tittle bg-success text-center tittles">
-								Listado de Clientes
-							</div>
 							<div class="full-width panel-content">
-								<form action="#">
-									<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-										<label class="mdl-button mdl-js-button mdl-button--icon" for="searchClient">
-											<i class="zmdi zmdi-search"></i>
-										</label>
-										<div class="mdl-textfield__expandable-holder">
-											<input class="mdl-textfield__input" type="text" id="searchClient">
-											<label class="mdl-textfield__label"></label>
-										</div>
-									</div>
-								</form>
-								<div class="mdl-list" style="width: 80%">
+								<form>
+									
 									<?php
-// 1. Conexión a la base de datos
 $servername = "localhost";
 $username = "admin";
 $password = "admin";
 $dbname = "proyecto";
 
-// Crear la conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar la conexión
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// 2. Ejecutar la consulta SQL
-$sql = "SELECT id, cedula, nombre, apellido, direccion, telefono, correo, estadoCivil, fechaNacimiento, estado FROM cliente WHERE estado = 'Activo'";
-$result = $conn->query($sql);
+if (isset($_GET['edit_id'])) {
+    $edit_id = $_GET['edit_id'];
 
-// 3. Mostrar los datos en una tabla HTML con estilo
-if ($result->num_rows > 0) {
-    echo "<style>
-            table {
-				margin-left: 80px;
-                width: 100%;
-                border-collapse: collapse;
-                font-size: 16px;
-                text-align: left;
-            }
-            th, td {
-                padding: 7px 7px;
-                border-bottom: 1px solid #ddd;
-            }
-            th {
-                background-color: #f2f2f2;
-                font-weight: bold;
-            }
-            tr:hover {
-                background-color: #f5f5f5;
-            }
-            a {
-                color: #f44336;
-                text-decoration: none;
-            }
-            a:hover {
-                text-decoration: underline;
-            }
-        </style>";
+    // Obtener los datos del usuario seleccionado
+    $sql = "SELECT * FROM cliente WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $edit_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    echo "<table>
-            <tr>
-                <th>Cédula</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Dirección</th>
-                <th>Teléfono</th>
-                <th>Correo</th>
-                <th>Estado Civil</th>
-                <th>Fecha de Nacimiento</th>
-                <th>Acciones</th>
-            </tr>";
-    // Output de cada fila
-    while($row = $result->fetch_assoc()) {
-        echo "<tr>
-                <td>" . $row["cedula"]. "</td>
-                <td>" . $row["nombre"]. "</td>
-                <td>" . $row["apellido"]. "</td>
-                <td>" . $row["direccion"]. "</td>
-                <td>" . $row["telefono"]. "</td>
-                <td>" . $row["correo"]. "</td>
-                <td>" . $row["estadoCivil"]. "</td>
-                <td>" . $row["fechaNacimiento"]. "</td>
-				<td> 
-                <a href='editar_usuario.php?edit_id=" . $row["id"] . "'>Editar</a>
-				</td>
-              </tr>";
+    if ($result->num_rows === 1) {
+        $row = $result->fetch_assoc();
+        
+        echo "<style>
+                body {
+                    font-family: Arial, sans-serif;
+                }
+                form {
+                    max-width: 500px;
+                    margin: 50px auto;
+                    padding: 20px;
+                    background-color: #f7f7f7;
+                    border-radius: 10px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                form h3 {
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+                label {
+                    display: block;
+                    margin-bottom: 5px;
+                    font-weight: bold;
+                }
+                input[type='text'], input[type='email'], input[type='date'] {
+                    width: 100%;
+                    padding: 10px;
+                    margin-bottom: 15px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    box-sizing: border-box;
+                }
+                input[type='submit'] {
+                    width: 100%;
+                    padding: 10px;
+                    background-color: #ff6600; /* Color naranja */
+                    border: none;
+                    border-radius: 5px;
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+                input[type='submit']:hover {
+                    background-color: #e65c00; /* Color naranja más oscuro al pasar el mouse */
+                }
+            </style>";
+        
+        echo "<form method='post' action=''>
+                <h3>Editar Usuario</h3>
+                <input type='hidden' name='id' value='" . $row['id'] . "'>
+                <label>Cédula:</label>
+                <input type='text' name='cedula' value='" . $row['cedula'] . "'>
+                <label>Nombre:</label>
+                <input type='text' name='nombre' value='" . $row['nombre'] . "'>
+                <label>Apellido:</label>
+                <input type='text' name='apellido' value='" . $row['apellido'] . "'>
+                <label>Dirección:</label>
+                <input type='text' name='direccion' value='" . $row['direccion'] . "'>
+                <label>Teléfono:</label>
+                <input type='text' name='telefono' value='" . $row['telefono'] . "'>
+                <label>Correo:</label>
+                <input type='email' name='correo' value='" . $row['correo'] . "'>
+                <label>Estado Civil:</label>
+                <input type='text' name='estadoCivil' value='" . $row['estadoCivil'] . "'>
+                <label>Fecha de Nacimiento:</label>
+                <input type='date' name='fechaNacimiento' value='" . $row['fechaNacimiento'] . "'>
+                <input type='submit' name='update' value='Guardar cambios'>
+              </form>";
+    } else {
+        echo "Usuario no encontrado.";
     }
-    echo "</table>";
-} else {
-    echo "No se encontraron resultados.";
+    $stmt->close();
 }
 
-// Cerrar la conexión
+if (isset($_POST['update'])) {
+    $id = $_POST['id'];
+    $cedula = $_POST['cedula'];
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $direccion = $_POST['direccion'];
+    $telefono = $_POST['telefono'];
+    $correo = $_POST['correo'];
+    $estadoCivil = $_POST['estadoCivil'];
+    $fechaNacimiento = $_POST['fechaNacimiento'];
+
+    $sql = "UPDATE cliente SET cedula=?, nombre=?, apellido=?, direccion=?, telefono=?, correo=?, estadoCivil=?, fechaNacimiento=? WHERE id=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssssssssi", $cedula, $nombre, $apellido, $direccion, $telefono, $correo, $estadoCivil, $fechaNacimiento, $id);
+
+    if ($stmt->execute()) {
+        echo "<script>alert('Datos actualizados correctamente');
+        window.location.href='client.php';</script>";
+    } else {
+        echo "<script>alert('Error al actualizar los datos');</script>";
+    }
+
+    $stmt->close();
+}
+
 $conn->close();
 ?>
 
-								</div>
+
+									
+								</form>
 							</div>
 						</div>
-						
+					</div>
+				</div>
+			</div>
+			<div class="mdl-tabs__panel" id="tabListAdmin">
+				<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
+						<div class="full-width panel mdl-shadow--2dp">
+							<div class="full-width panel-tittle bg-success text-center tittles">
+								Lista de Administrador
+							</div>
+							<div class="full-width panel-content">
+								
+				<!-- Busqueda -->
+								<form action="#">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+										<label class="mdl-button mdl-js-button mdl-button--icon" for="searchAdmin">
+											<i class="zmdi zmdi-search"></i>
+										</label>
+										<div class="mdl-textfield__expandable-holder">
+											<input class="mdl-textfield__input" type="text" id="searchAdmin">
+											<label class="mdl-textfield__label"></label>
+										</div>
+									</div>
+								</form>
+						<!-- Listado -->		
+								
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -311,3 +364,8 @@ $conn->close();
 	</section>
 </body>
 </html>
+
+
+
+
+

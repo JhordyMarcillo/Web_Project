@@ -1,7 +1,4 @@
-<!-- 
-* Copyright 2018 Carlos Eduardo Alfaro Orellana
-  https://www.youtube.com/c/CarlosAlfaro007
--->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,19 +25,20 @@
 				<i class="zmdi zmdi-account-circle"></i>
 			</p>
 			<p class="text-center text-condensedLight">Sign in with your Account</p>
-			<form action="home.html">
+			<form action="login.php" method="POST">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				    <input class="mdl-textfield__input" type="text" id="userName">
-				    <label class="mdl-textfield__label" for="userName">User Name</label>
+					<input class="mdl-textfield__input" type="text" id="userName" name="username">
+					<label class="mdl-textfield__label" for="userName">User Name</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-				    <input class="mdl-textfield__input" type="password" id="pass">
-				    <label class="mdl-textfield__label" for="pass">Password</label>
+					<input class="mdl-textfield__input" type="password" id="pass" name="password">
+					<label class="mdl-textfield__label" for="pass">Password</label>
 				</div>
 				<button class="mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #3F51B5; margin: 0 auto; display: block;">
 					SIGN IN
 				</button>
 			</form>
+
 		</div>
 	</div>
 </body>
