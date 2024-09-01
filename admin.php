@@ -1,3 +1,21 @@
+<?php
+// Conexión a la base de datos
+$servername = "localhost";
+$username = "admin";
+$password = "admin";
+$dbname = "proyecto";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verifica la conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Obtener los roles de la base de datos
+$sql = "SELECT id, nombre FROM roles";
+$result = $conn->query($sql);
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -311,12 +329,26 @@
 		<!-- No redirecciona a Rol.php -->		
 <div class="mdl-cell mdl-cell--6-col mdl-cell--9-col-tablet">
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <label style="margin-left: 10%; width: 80px" class="mdl-textfield__label" for="addRol">Agregar rol</label>
-        <a href="Rol.php" style="margin-left: 12%;">
-            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addRol">
-                <i class="zmdi zmdi-assignment-check"></i>
-            </button>
-        </a>
+      <p></p>
+		<p>&nbsp;</p>
+        <div class="mdl-cell mdl-cell--12-col">
+        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Roles</legend>
+        <br>
+        <?php
+			if ($result->num_rows > 0) {
+				while($row = $result->fetch_assoc()) {
+					echo '<p><input type="checkbox" name="roles[]" value="' . $row["id"] . '"> ' . $row["nombre"];
+					echo ' <a href="ediciorol.php?id=' . $row["id"] . '">Editar</a></p>';
+				}
+			} else {
+				echo "No hay roles disponibles.";
+			}
+        ?>
+    </div>
+
+			<a href="Rol.php" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" style="margin-left: 12%;">
+    		<i class="zmdi zmdi-assignment-check"></i>
+			</a>
     </div>
 </div>
 
@@ -344,3 +376,7 @@
 	</section>
 </body>
 </html>
+
+<?php
+$conexion->close();
+?>

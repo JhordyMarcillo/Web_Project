@@ -1,13 +1,26 @@
 <?php
-// agregar_rol.php
+$servername = "localhost";
+$username = "admin";
+$password = "admin";
+$dbname = "proyecto";
 
 // Conexión a la base de datos
-$conexion = new mysqli("localhost", "admin", "admin", "proyecto");
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificar conexión
-if ($conexion->connect_error) {
-    die("Conexión fallida: " . $conexion->connect_error);
+// Verifica la conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
 }
+
+// Obtén el ID del rol a editar
+$id = $_GET['id'];
+
+// Consulta para obtener los datos del rol
+$sql = "SELECT * FROM roles WHERE id='$id'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -130,6 +143,7 @@ if ($conexion->connect_error) {
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
 						<a href="providers.html" class="full-width">
+
 							<div class="navLateral-body-cl">
 								<i class="zmdi zmdi-shopping-cart"></i>
 							</div>
@@ -212,77 +226,23 @@ if ($conexion->connect_error) {
 								Nuevo Rol
 							</div>
 							<div class="full-width panel-content">
-								<form action="procesar_rol.php" method="POST">
-    <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col">
-            <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Ingrese los datos del rol</legend>
-            <br>
-        </div>
-        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIProvider" name="DNIProvider">
-                <label class="mdl-textfield__label" for="DNIProvider">ID PERFIL</label>
-                <span class="mdl-textfield__error">Número Inválido</span>
-            </div>
-        </div>
-        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9 ]*(\.[0-9]+)?" id="NameProvider" name="NameProvider">
-                <label class="mdl-textfield__label" for="NameProvider">Nombre</label>
-                <span class="mdl-textfield__error">Nombre Inválido</span>
-            </div>
-        </div>
-        <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <textarea class="mdl-textfield__input" id="descripcion" name="descripcion" rows="3"></textarea>
-                <label class="mdl-textfield__label" for="descripcion">Descripción</label>
-                <span class="mdl-textfield__error">Ingrese la descripción</span>
-            </div>
-        </div>
+								    <form action="procesar_edicion_rol.php" method="POST">
+        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" value="<?php echo $row['nombre']; ?>"><br>
 
-        <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-                <div id="textareas-container">
-                    <!-- Los textareas se agregarán aquí dinámicamente -->
-                </div>
-            </div>
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion"><?php echo $row['descripcion']; ?></textarea><br>
 
-            <div style="color: rgba(189,189,189,1.00)" class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <label for="accesos" style="color: ">Accesos</label>
-                    <hr style="width: 30%; margin-top: 0.1%">
-                    <p>
-                        <input class="checkbox" type="checkbox" name="accesos[]" id="checkbox1" value="Agregar usuarios">
-                        <label for="checkbox1">Agregar usuarios</label><br><br>
-                        <input class="checkbox" type="checkbox" name="accesos[]" id="checkbox2" value="Modificar Usuarios">
-                        <label for="checkbox2">Modificar Usuarios</label><br><br>
-                        <input class="checkbox" type="checkbox" name="accesos[]" id="checkbox3" value="Eliminar Usuarios">
-                        <label for="checkbox3">Eliminar Usuarios</label><br><br>
-                        <input class="checkbox" type="checkbox" name="accesos[]" id="checkbox4" value="Productos">
-                        <label for="checkbox4">Productos</label><br><br>
-                        <input class="checkbox" type="checkbox" name="accesos[]" id="checkbox5" value="Ventas">
-                        <label for="checkbox5">Ventas</label><br><br>
-						<input class="checkbox" type="checkbox" name="accesos[]" id="checkbox6" value="Agregar proveedor">
-                        <label for="checkbox1">Agregar proveedor</label><br><br>
-						<input class="checkbox" type="checkbox" name="accesos[]" id="checkbox7" value="Ver Proveedores">
-                        <label for="checkbox1">Ver Proveedores</label><br><br>
-						<input class="checkbox" type="checkbox" name="accesos[]" id="checkbox8" value="Inventario">
-                        <label for="checkbox1">Inventario</label><br><br>
-						<input class="checkbox" type="checkbox" name="accesos[]" id="checkbox9" value="Reportes">
-                        <label for="checkbox1">Reportes</label><br><br>
-                    </p>
-                    <div id="checkboxError" class="error"></div>
-                </div>
-            </div>
-        </div>									
-    </div>
-    <p class="text-center">
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addProvider">
-            <i class="zmdi zmdi-plus"></i>
-        </button>
-    </p>
-</form>
+        <!-- Aquí puedes agregar la lógica para mostrar los accesos seleccionados -->
+        <label for="accesos">Accesos:</label>
+        <!-- Muestra los accesos como checkboxes y marca los que ya tiene -->
+        <input type="checkbox" name="accesos[]" value="cv1" <?php if (strpos($row['accesos'], 'cv1') !== false) echo 'checked'; ?>> Acceso 1<br>
+        <input type="checkbox" name="accesos[]" value="cv2" <?php if (strpos($row['accesos'], 'cv2') !== false) echo 'checked'; ?>> Acceso 2<br>
+        <!-- Agrega más checkboxes según tus necesidades -->
 
+        <button type="submit">Guardar cambios</button>
+    </form>
 							</div>
 						</div>
 					</div>
@@ -337,6 +297,11 @@ if ($conexion->connect_error) {
     </script>
 
 </html>
+
 <?php
-$conexion->close();
+} else {
+    echo "No se encontró el rol.";
+}
+
+$conn->close();
 ?>
