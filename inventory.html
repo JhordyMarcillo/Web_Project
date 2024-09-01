@@ -82,7 +82,7 @@
 								</a>
 							</li>
 							<li class="full-width">
-								<a href="admin.php" class="full-width">
+								<a href="Delete.php" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-account"></i>
 									</div>
@@ -96,7 +96,7 @@
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="products.html" class="full-width">
+						<a href="products.php" class="full-width">
 							<div class="navLateral-body-cl">
 								<i class="zmdi zmdi-washing-machine"></i>
 							</div>
@@ -118,14 +118,37 @@
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="providers.html" class="full-width">
+						<a href="#!" class="full-width btn-subMenu">
 							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-shopping-cart"></i>
+								<i class="zmdi zmdi-face"></i>
 							</div>
 							<div class="navLateral-body-cr">
 								Proveedores
 							</div>
+							<span class="zmdi zmdi-chevron-left"></span>
 						</a>
+						<ul class="full-width menu-principal sub-menu-options">
+							<li class="full-width">
+								<a href="providers.html" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-account"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Agregar Prooveedor
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="mostrarProviders.php" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-accounts"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Ver Prooveedores
+									</div>
+								</a>
+							</li>							
+						</ul>
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">

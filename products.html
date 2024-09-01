@@ -205,93 +205,71 @@
 								Nuevo Producto
 							</div>
 							<div class="full-width panel-content">
-								<form>
+								<form id="form1" name="form1" method="post" action="conexionProducts.php" enctype="multipart/form-data">
 									<div class="mdl-grid">
 										<div class="mdl-cell mdl-cell--12-col">
 									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Informacion basica</legend><br>
 									    </div>
+										        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+												<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+													<input class="mdl-textfield__input" type="number" pattern="-?[0-9- ]*(\.[0-9]+)?" id="BarCode" name="BarCode">
+													<label class="mdl-textfield__label" for="BarCode">Codigo</label>
+													<span class="mdl-textfield__error">Codigo Incorrecto</span>
+												</div>
+											</div>
 										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="number" pattern="-?[0-9- ]*(\.[0-9]+)?" id="BarCode">
-												<label class="mdl-textfield__label" for="BarCode">Codigo</label>
-												<span class="mdl-textfield__error">Codigo Incorrecto</span>
-											</div>
-										</div>
-										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameProduct">
-												<label class="mdl-textfield__label" for="NameProduct">Nombre</label>
-												<span class="mdl-textfield__error">Nombre Invalido</span>
-											</div>
-										</div>
-										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="StrockProduct">
-												<label class="mdl-textfield__label" for="StrockProduct">Unidades</label>
-												<span class="mdl-textfield__error">Unidades Invalidas</span>
-											</div>
-										</div>
-										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[0-9.]*(\.[0-9]+)?" id="PriceProduct">
-												<label class="mdl-textfield__label" for="PriceProduct">Precio</label>
-												<span class="mdl-textfield__error">Precio Invalido</span>
-											</div>
-										</div>
-
-										<div class="mdl-cell mdl-cell--12-col">
-									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Categoria</legend><br>
-									    </div>
-										<div class="mdl-cell mdl-cell--12-col">
-											<div class="mdl-textfield mdl-js-textfield">
-												<select class="mdl-textfield__input">
-													<option value="" disabled="" selected="">Escoger una categoria</option>
-													<option value="Categoria 1">Categoria 1</option>
-													<option value="Categoria 2">Categoria 2</option>
-												</select>
-											</div>
-										</div>
-
-										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text"  id="modelProduct">
-												<label class="mdl-textfield__label" for="modelProduct">Modelo</label>
-												<span class="mdl-textfield__error">Modelo Invalido</span>
-											</div>
-										</div>
-										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" id="markProduct">
-												<label class="mdl-textfield__label" for="markProduct">Marca</label>
-												<span class="mdl-textfield__error">Marca Invalido</span>
-											</div>
-										</div>
-										<div class="mdl-cell mdl-cell--12-col">
-									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Información Adicional</legend><br>
-									    </div>
-
-										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-											<div class="mdl-textfield mdl-js-textfield">
-												<select class="mdl-textfield__input">
-													<option value="" disabled="" selected="">Seleccionar Estado</option>
-													<option value="Activo">Activo</option>
-													<option value="Desactivado">Desactivado</option>
-												</select>
-											</div>
-										</div>
-										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-											<div class="mdl-textfield mdl-js-textfield">
-												<input type="file">
-											</div>
-										</div>
-									</div>
-									<p class="text-center">
-										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addProduct">
-											<i class="zmdi zmdi-plus"></i>
-										</button>
-										<div class="mdl-tooltip" for="btn-addProduct">Añadir Producto</div>
-									</p>
-								</form>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameProduct" name="NameProduct">
+                <label class="mdl-textfield__label" for="NameProduct">Nombre</label>
+                <span class="mdl-textfield__error">Nombre Invalido</span>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="StrockProduct" name="StrockProduct">
+                <label class="mdl-textfield__label" for="StrockProduct">Unidades</label>
+                <span class="mdl-textfield__error">Unidades Invalidas</span>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" pattern="-?[0-9.]*(\.[0-9]+)?" id="PriceProduct" name="PriceProduct">
+                <label class="mdl-textfield__label" for="PriceProduct">Precio</label>
+                <span class="mdl-textfield__error">Precio Invalido</span>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col">
+            <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Categoria</legend><br>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col">
+            <div class="mdl-textfield mdl-js-textfield">
+                <select class="mdl-textfield__input" id="Categoria" name="Categoria">
+                    <option value="" disabled="" selected="">Escoger una categoria</option>
+                    <option value="Frutas y Verduras">Frutas y Verduras</option>
+                    <option value="Lacteos">Lacteos</option>
+                    <option value="Bebidas">Bebidas</option>
+                    <option value="Congelados">Congelados</option>
+                    <option value="Carnes">Carnes</option>
+                    <option value="Confiteria">Confiteria</option>
+                    <option value="Snacks">Snacks</option>
+                </select>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="markProduct" name="markProduct">
+                <label class="mdl-textfield__label" for="markProduct">Marca</label>
+                <span class="mdl-textfield__error">Marca Invalido</span>
+            </div>
+        </div>
+										
+    </div>
+    <p class="text-center">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" type="submit">
+            <i class="zmdi zmdi-plus"></i>
+        </button>
+    </p>
+</form>
 							</div>
 						</div>
 					</div>
@@ -313,10 +291,13 @@
 						</form>
 						<nav class="full-width menu-categories">
 							<ul class="list-unstyle text-center">
-								<li><a href="#!">Categoria 1</a></li>
-								<li><a href="#!">Categoria 2</a></li>
-								<li><a href="#!">Categoria 3</a></li>
-								<li><a href="#!">Categoria 4</a></li>
+								<li><a href="#!">Frutas y Verduras</a></li>
+								<li><a href="#!">Lacteos</a></li>
+								<li><a href="#!">Bebidas</a></li>
+								<li><a href="#!">Congelados</a></li>
+								<li><a href="#!">Carnes</a></li>
+								<li><a href="#!">Confiteria</a></li>
+								<li><a href="#!">Snacks</a></li>
 							</ul>
 						</nav>
 						<div class="full-width text-center" style="padding: 30px 0;">

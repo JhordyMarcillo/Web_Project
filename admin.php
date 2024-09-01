@@ -82,7 +82,7 @@
 								</a>
 							</li>
 							<li class="full-width">
-								<a href="admin.php" class="full-width">
+								<a href="Delete.php" class="full-width">
 									<div class="navLateral-body-cl">
 										<i class="zmdi zmdi-account"></i>
 									</div>
@@ -96,7 +96,7 @@
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="products.html" class="full-width">
+						<a href="products.php" class="full-width">
 							<div class="navLateral-body-cl">
 								<i class="zmdi zmdi-washing-machine"></i>
 							</div>
@@ -118,14 +118,37 @@
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="providers.html" class="full-width">
+						<a href="#!" class="full-width btn-subMenu">
 							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-shopping-cart"></i>
+								<i class="zmdi zmdi-face"></i>
 							</div>
 							<div class="navLateral-body-cr">
 								Proveedores
 							</div>
+							<span class="zmdi zmdi-chevron-left"></span>
 						</a>
+						<ul class="full-width menu-principal sub-menu-options">
+							<li class="full-width">
+								<a href="providers.html" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-account"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Agregar Prooveedor
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="mostrarProviders.php" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-accounts"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Ver Prooveedores
+									</div>
+								</a>
+							</li>							
+						</ul>
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
@@ -187,27 +210,26 @@
 			</div>
 			<div class="full-width header-well-text">
 				<p class="text-condensedLight">
-				<h3 style="margin-top: 8%; margin-left: 10%"> Ingresar un nuevo colaborador</h3>
+				<h3 style="margin-top: 8%; margin-left: 10%"> Ingresar un nuevo usuario</h3>
 				</p>
 			</div>
 		</section>
 		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
 			<div class="mdl-tabs__tab-bar">
 				<a href="#tabNewAdmin" class="mdl-tabs__tab is-active">Agregar</a>
-				<a href="#tabListAdmin" class="mdl-tabs__tab">Mostrar</a>
 			</div>
 			<div class="mdl-tabs__panel is-active" id="tabNewAdmin">
 				<div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--12-col">
 						<div class="full-width panel mdl-shadow--2dp">
 							<div class="full-width panel-tittle bg-primary text-center tittles">
-								Nuevo Colaborador
+								Nuevo usuario
 							</div>
 							<div class="full-width panel-content">
 								<form>
 									<div class="mdl-grid">
 										<div class="mdl-cell mdl-cell--12-col">
-									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos del colaborador</legend><br>
+									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos del usuario</legend><br>
 									    </div>
 									    <div class="mdl-cell mdl-cell--12-col">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -276,7 +298,7 @@
 										</div>
 
 										<div class="mdl-cell mdl-cell--12-col">
-									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Detalles de la cuenta</legend><br>
+									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Detalles de ingreso</legend><br>
 									    </div>
 										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -310,37 +332,9 @@
 										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin">
 											<i class="zmdi zmdi-plus"></i>
 										</button>
-										<div class="mdl-tooltip" for="btn-addAdmin">Agregar Administrador</div>
+										<div class="mdl-tooltip" for="btn-addAdmin">Agregar Usuario</div>
 									</p>
 								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="mdl-tabs__panel" id="tabListAdmin">
-				<div class="mdl-grid">
-					<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
-						<div class="full-width panel mdl-shadow--2dp">
-							<div class="full-width panel-tittle bg-success text-center tittles">
-								Lista de Administrador
-							</div>
-							<div class="full-width panel-content">
-								
-				<!-- Busqueda -->
-								<form action="#">
-									<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-										<label class="mdl-button mdl-js-button mdl-button--icon" for="searchAdmin">
-											<i class="zmdi zmdi-search"></i>
-										</label>
-										<div class="mdl-textfield__expandable-holder">
-											<input class="mdl-textfield__input" type="text" id="searchAdmin">
-											<label class="mdl-textfield__label"></label>
-										</div>
-									</div>
-								</form>
-						<!-- Listado -->		
-								
 							</div>
 						</div>
 					</div>
