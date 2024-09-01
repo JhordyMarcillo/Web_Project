@@ -1,31 +1,56 @@
 <?php
+
 $servername = "localhost";
 $username = "admin";
-$password = "admin";
+$dbPassword = "admin"; // Cambié el nombre de la variable para evitar confusión
 $dbname = "proyecto";
 
-$cedula = $_POST['cedula'];
-$nombre = $_POST['NameClient'];
-$apellidos = $_POST['LastNameClient'];
-$direccion = $_POST['addressClient1'];
-$telefono = $_POST['phoneClient'];
-$correo = $_POST['emailClient'];
+
+// Recoger los datos del formulario
+$cedula = $_POST['DNIAdmin'];
+$nombre = $_POST['NameAdmin'];
+$apellidos = $_POST['LastNameAdmin'];
+$direccion = $_POST['addressAdmin'];
+$telefono = $_POST['phoneAdmin'];
+$correo = $_POST['emailAdmin'];
 $estadoCivil = $_POST['estado'];
 $fechaNacimiento = $_POST['dateAdmin'];
+$user = $_POST['UserNameAdmin'];
+$userPassword = $_POST['passwordAdmin'];
 
 
+// Crear la conexión
+$conn = new mysqli($servername, $username, $dbPassword, $dbname);
 
-//Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-//Check connection
+// Verificar la conexión
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO cliente (cedula, nombre, apellido, direccion, telefono, correo, estadoCivil, fechaNacimiento)
-VALUES ('$cedula', '$nombre', '$apellidos', '$direccion', '$telefono', '$correo', '$estadoCivil', '$fechaNacimiento')";
+// Insertar los datos del cliente en la tabla `cliente`
+$sql = "INSERT INTO cliente (cedula, nombre, apellido, direccion, telefono, correo, estadoCivil, fechaNacimiento, user, password) 
+VALUES ('$cedula', '$nombre', '$apellidos', '$direccion', '$telefono', '$correo', '$estadoCivil', '$fechaNacimiento', '$user', '$$userPasswor')";
 
 if ($conn->query($sql) === TRUE) {
+  // Obtener el ID del cliente recién insertado
+  $cliente_id = $conn->insert_id;
+
+  // Procesar los roles seleccionados
+  if (isset($_POST['roles'])) {
+    $rolesSeleccionados = $_POST['roles'];
+
+    // Insertar cada rol seleccionado en la tabla `cliente_roles`
+    foreach ($rolesSeleccionados as $idRol) {
+      $sqlRol = "INSERT INTO cliente_roles (cliente_id, rol_id) VALUES ('$cliente_id', '$idRol')";
+      if (!$conn->query($sqlRol)) {
+        echo "<script> alert('Error al guardar el rol: " . $conn->error . "'); 
+        window.location.href='client.php';
+        </script>";
+        exit;
+      }
+    }
+  }
+
   echo "<script>alert('Datos guardados correctamente ...');
   window.location.href='client.php';
   </script>";
@@ -35,5 +60,6 @@ if ($conn->query($sql) === TRUE) {
   </script>";
 }
 
+// Cerrar la conexión
 $conn->close();
 ?>

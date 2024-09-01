@@ -244,49 +244,49 @@ $result = $conn->query($sql);
 								Nuevo usuario
 							</div>
 							<div class="full-width panel-content">
-								<form>
+								<form id="form1" name="form1" method="post" action="conexion.php">
 									<div class="mdl-grid">
 										<div class="mdl-cell mdl-cell--12-col">
 									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos del usuario</legend><br>
 									    </div>
 									    <div class="mdl-cell mdl-cell--12-col">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIAdmin">
+												<input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIAdmin" name="DNIAdmin">
 												<label class="mdl-textfield__label" for="DNIAdmin">Cedula</label>
 												<span class="mdl-textfield__error">Numero Invalido</span>
 											</div>
 									    </div>
 									    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameAdmin">
+												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameAdmin" name="NameAdmin">
 												<label class="mdl-textfield__label" for="NameAdmin">Nombre</label>
 												<span class="mdl-textfield__error">Nombre Invalido</span>
 											</div>
 									    </div>
 										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin">
+												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-záéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="LastNameAdmin" name="LastNameAdmin">
 												<label class="mdl-textfield__label" for="LastNameAdmin">Apellido</label>
 												<span class="mdl-textfield__error">Apellido Invalido</span>
 											</div>
 										</div>
 										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneAdmin" min="10"; max="10">
+												<input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneAdmin" min="10"; max="10" name="phoneAdmin">
 												<label class="mdl-textfield__label" for="phoneAdmin">Telefono</label>
 												<span class="mdl-textfield__error">Telefono Invalido</span>
 											</div>
 										</div>
 										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="email" id="emailAdmin">
+												<input class="mdl-textfield__input" type="email" id="emailAdmin" name="emailAdmin">
 												<label class="mdl-textfield__label" for="emailAdmin">Correo Electronico</label>
 												<span class="mdl-textfield__error">Correo invalido</span>
 											</div>
 										</div>
 										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" id="addressAdmin">
+												<input class="mdl-textfield__input" type="text" id="addressAdmin" name="addressAdmin">
 												<label class="mdl-textfield__label" for="addressAdmin">Direccion</label>
 												<span class="mdl-textfield__error">Direccion Invalida</span>
 											</div>
@@ -309,7 +309,7 @@ $result = $conn->query($sql);
 										
 										<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="date" id="dateAdmin">
+												<input class="mdl-textfield__input" type="date" id="dateAdmin" name="dateAdmin">
 												<label class="mdl-textfield__label" for="dateAdmin">Fecha de Nacimiento</label>
 												<span class="mdl-textfield__error">Fecha Invalida</span>
 											</div>
@@ -320,48 +320,45 @@ $result = $conn->query($sql);
 									    </div>
 										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin">
+												<input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ]*(\.[0-9]+)?" id="UserNameAdmin" name="UserNameAdmin">
 												<label class="mdl-textfield__label" for="UserNameAdmin">Usuario</label>
 												<span class="mdl-textfield__error">Usuario Invalido</span>
 											</div>
 										</div>
-										
-		<!-- No redirecciona a Rol.php -->		
+											
 <div class="mdl-cell mdl-cell--6-col mdl-cell--9-col-tablet">
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-      <p></p>
-		<p>&nbsp;</p>
-        <div class="mdl-cell mdl-cell--12-col">
+        <p>&nbsp;</p>
         <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Roles</legend>
         <br>
         <?php
-			if ($result->num_rows > 0) {
-				while($row = $result->fetch_assoc()) {
-					echo '<p><input type="checkbox" name="roles[]" value="' . $row["id"] . '"> ' . $row["nombre"];
-					echo ' <a href="ediciorol.php?id=' . $row["id"] . '">Editar</a></p>';
-				}
-			} else {
-				echo "No hay roles disponibles.";
-			}
-        ?>
-    </div>
+        // Consulta para obtener los roles desde la tabla `roles`
+        $sql = "SELECT id, nombre FROM roles";
+        $result = $conn->query($sql);
 
-			<a href="Rol.php" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" style="margin-left: 12%;">
-    		<i class="zmdi zmdi-assignment-check"></i>
-			</a>
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo '<p><input type="checkbox" name="roles[]" value="' . $row["id"] . '"> ' . $row["nombre"] . '</p>';
+            }
+        } else {
+            echo "No hay roles disponibles.";
+        }
+        ?>
     </div>
 </div>
 
 
+
+
 										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-												<input class="mdl-textfield__input" type="password" id="passwordAdmin">
+												<input class="mdl-textfield__input" type="password" id="passwordAdmin" name="passwordAdmin">
 												<label class="mdl-textfield__label" for="passwordAdmin">Contraseña</label>
 											</div>
 										</div>
 									</div>
 									<p class="text-center">
-										<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin">
+										<button type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" id="btn-addAdmin">
 											<i class="zmdi zmdi-plus"></i>
 										</button>
 										<div class="mdl-tooltip" for="btn-addAdmin">Agregar Usuario</div>
