@@ -125,14 +125,37 @@ $result = $conn->query($sql);
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="sales.html" class="full-width">
+						<a href="#!" class="full-width btn-subMenu">
 							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-shopping-cart"></i>
+								<i class="zmdi zmdi-face"></i>
 							</div>
 							<div class="navLateral-body-cr">
 								Ventas
 							</div>
+							<span class="zmdi zmdi-chevron-left"></span>
 						</a>
+						<ul class="full-width menu-principal sub-menu-options">
+							<li class="full-width">
+								<a href="sales.html" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-account"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Listado de Ventas
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="client.php" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-accounts"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Realizar una venta
+									</div>
+								</a>
+							</li>
+						</ul>
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
@@ -328,25 +351,30 @@ $result = $conn->query($sql);
 											
 <div class="mdl-cell mdl-cell--6-col mdl-cell--9-col-tablet">
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <p>&nbsp;</p>
+      <p></p>
+		<p>&nbsp;</p>
+        <div class="mdl-cell mdl-cell--12-col">
         <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Roles</legend>
         <br>
-        <?php
-        // Consulta para obtener los roles desde la tabla `roles`
-        $sql = "SELECT id, nombre FROM roles";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            while($row = $result->fetch_assoc()) {
-                echo '<p><input type="checkbox" name="roles[]" value="' . $row["id"] . '"> ' . $row["nombre"] . '</p>';
-            }
-        } else {
-            echo "No hay roles disponibles.";
+         <?php
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo '<p><input type="checkbox" name="roles[]" value="' . $row["id"] . '"> ' . $row["nombre"];
+            echo ' <a href="ediciorol.php?id=' . $row["id"] . '">Editar</a></p>';
         }
-        ?>
+    } else {
+        echo "No hay roles disponibles.";
+    }
+    ?>
+
+    <input type="submit" value="Guardar">
+    </div>
+
+			<a href="Rol.php" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" style="margin-left: 12%;">
+    		<i class="zmdi zmdi-assignment-check"></i>
+			</a>
     </div>
 </div>
-
 
 
 
