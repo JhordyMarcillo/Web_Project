@@ -5,8 +5,7 @@ $username = "admin";
 $dbPassword = "admin"; // Cambié el nombre de la variable para evitar confusión
 $dbname = "proyecto";
 
-
-// Recoger los datos del formulario
+// Recoger los datos del formulario, incluyendo el rol seleccionado
 $cedula = $_POST['DNIAdmin'];
 $nombre = $_POST['NameAdmin'];
 $apellidos = $_POST['LastNameAdmin'];
@@ -17,7 +16,7 @@ $estadoCivil = $_POST['estado'];
 $fechaNacimiento = $_POST['dateAdmin'];
 $user = $_POST['UserNameAdmin'];
 $userPassword = $_POST['passwordAdmin'];
-
+$rol = isset($_POST['roles']) ? $_POST['roles'][0] : null;  // Asumiendo que solo se selecciona un rol
 
 // Crear la conexión
 $conn = new mysqli($servername, $username, $dbPassword, $dbname);
@@ -27,30 +26,11 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-// Insertar los datos del cliente en la tabla `cliente`
-$sql = "INSERT INTO cliente (cedula, nombre, apellido, direccion, telefono, correo, estadoCivil, fechaNacimiento, user, password) 
-VALUES ('$cedula', '$nombre', '$apellidos', '$direccion', '$telefono', '$correo', '$estadoCivil', '$fechaNacimiento', '$user', '$$userPasswor')";
+// Insertar los datos del cliente en la tabla `cliente`, incluyendo el rol
+$sql = "INSERT INTO cliente (cedula, nombre, apellido, direccion, telefono, correo, estadoCivil, fechaNacimiento, user, password, rol) 
+VALUES ('$cedula', '$nombre', '$apellidos', '$direccion', '$telefono', '$correo', '$estadoCivil', '$fechaNacimiento', '$user', '$userPassword', '$rol')";
 
 if ($conn->query($sql) === TRUE) {
-  // Obtener el ID del cliente recién insertado
-  $cliente_id = $conn->insert_id;
-
-  // Procesar los roles seleccionados
-  if (isset($_POST['roles'])) {
-    $rolesSeleccionados = $_POST['roles'];
-
-    // Insertar cada rol seleccionado en la tabla `cliente_roles`
-    foreach ($rolesSeleccionados as $idRol) {
-      $sqlRol = "INSERT INTO cliente_roles (cliente_id, rol_id) VALUES ('$cliente_id', '$idRol')";
-      if (!$conn->query($sqlRol)) {
-        echo "<script> alert('Error al guardar el rol: " . $conn->error . "'); 
-        window.location.href='client.php';
-        </script>";
-        exit;
-      }
-    }
-  }
-
   echo "<script>alert('Datos guardados correctamente ...');
   window.location.href='client.php';
   </script>";

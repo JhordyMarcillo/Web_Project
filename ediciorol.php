@@ -211,38 +211,85 @@ if ($result->num_rows > 0) {
 			</div>
 			<div class="full-width header-well-text">
 				<p class="text-condensedLight">
-				<h3 style="margin-top: 8%; margin-left: 10%"> Ingresar un nuevo rol</h3>
+				<h3 style="margin-top: 8%; margin-left: 10%"> Editar el rol seleccionado</h3>
 				</p>
 			</div>
 		</section>
 		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
 			<div class="mdl-tabs__tab-bar">
-			<a href="#tabNewProvider" class="mdl-tabs__tab is-active">Nuevo</a></div>
+			<a href="#tabNewProvider" class="mdl-tabs__tab is-active">Edicion</a></div>
 			<div class="mdl-tabs__panel is-active" id="tabNewProvider">
 				<div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--12-col">
 						<div class="full-width panel mdl-shadow--2dp">
 							<div class="full-width panel-tittle bg-primary text-center tittles">
-								Nuevo Rol
+								Edicion de Rol
 							</div>
 							<div class="full-width panel-content">
-								    <form action="procesar_edicion_rol.php" method="POST">
-        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" value="<?php echo $row['nombre']; ?>"><br>
+<form action="procesar_edicion_rol.php" method="POST">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Editar Rol</legend>
+            <br>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="id" name="id" value="<?php echo $row['id']; ?>" readonly>
+                <label class="mdl-textfield__label" for="id">ID</label>
+                <span class="mdl-textfield__error">Número Inválido</span>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="nombre" name="nombre" value="<?php echo $row['nombre']; ?>">
+                <label class="mdl-textfield__label" for="nombre">Nombre</label>
+                <span class="mdl-textfield__error">Nombre Inválido</span>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <textarea class="mdl-textfield__input" id="descripcion" name="descripcion" rows="3"><?php echo $row['descripcion']; ?></textarea>
+                <label class="mdl-textfield__label" for="descripcion">Descripción</label>
+                <span class="mdl-textfield__error">Ingrese la descripción</span>
+            </div>
+        </div>
 
-        <label for="descripcion">Descripción:</label>
-        <textarea name="descripcion"><?php echo $row['descripcion']; ?></textarea><br>
+            <div style="color: rgba(189,189,189,1.00)" class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <label for="accesos" style="color: ">Accesos</label>
+                <hr style="width: 30%; margin-top: 0.1%">
+                <p>
+                    <input class="checkbox" type="checkbox" name="accesos[]" id="checkbox1" value="Agregar usuarios" <?php if (strpos($row['accesos'], 'Agregar usuarios') !== false) echo 'checked'; ?>>
+                    <label for="checkbox1">Agregar usuarios</label><br><br>
+                    <input class="checkbox" type="checkbox" name="accesos[]" id="checkbox2" value="Modificar Usuarios" <?php if (strpos($row['accesos'], 'Modificar Usuarios') !== false) echo 'checked'; ?>>
+                    <label for="checkbox2">Modificar Usuarios</label><br><br>
+                    <input class="checkbox" type="checkbox" name="accesos[]" id="checkbox3" value="Eliminar Usuarios" <?php if (strpos($row['accesos'], 'Eliminar Usuarios') !== false) echo 'checked'; ?>>
+                    <label for="checkbox3">Eliminar Usuarios</label><br><br>
+                    <input class="checkbox" type="checkbox" name="accesos[]" id="checkbox4" value="Productos" <?php if (strpos($row['accesos'], 'Productos') !== false) echo 'checked'; ?>>
+                    <label for="checkbox4">Productos</label><br><br>
+                    <input class="checkbox" type="checkbox" name="accesos[]" id="checkbox5" value="Ventas" <?php if (strpos($row['accesos'], 'Ventas') !== false) echo 'checked'; ?>>
+                    <label for="checkbox5">Ventas</label><br><br>
+                    <input class="checkbox" type="checkbox" name="accesos[]" id="checkbox6" value="Agregar proveedor" <?php if (strpos($row['accesos'], 'Agregar proveedor') !== false) echo 'checked'; ?>>
+                    <label for="checkbox6">Agregar proveedor</label><br><br>
+                    <input class="checkbox" type="checkbox" name="accesos[]" id="checkbox7" value="Ver Proveedores" <?php if (strpos($row['accesos'], 'Ver Proveedores') !== false) echo 'checked'; ?>>
+                    <label for="checkbox7">Ver Proveedores</label><br><br>
+                    <input class="checkbox" type="checkbox" name="accesos[]" id="checkbox8" value="Inventario" <?php if (strpos($row['accesos'], 'Inventario') !== false) echo 'checked'; ?>>
+                    <label for="checkbox8">Inventario</label><br><br>
+                    <input class="checkbox" type="checkbox" name="accesos[]" id="checkbox9" value="Reportes" <?php if (strpos($row['accesos'], 'Reportes') !== false) echo 'checked'; ?>>
+                    <label for="checkbox9">Reportes</label><br><br>
+                </p>
+                <div id="checkboxError" class="error"></div>
+            </div>
+        </div>
+	</div>
+    <p class="text-center">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary">
+            <i class="zmdi zmdi-save"></i>
+        </button>
+    </p>
+</form>
 
-        <!-- Aquí puedes agregar la lógica para mostrar los accesos seleccionados -->
-        <label for="accesos">Accesos:</label>
-        <!-- Muestra los accesos como checkboxes y marca los que ya tiene -->
-        <input type="checkbox" name="accesos[]" value="cv1" <?php if (strpos($row['accesos'], 'cv1') !== false) echo 'checked'; ?>> Acceso 1<br>
-        <input type="checkbox" name="accesos[]" value="cv2" <?php if (strpos($row['accesos'], 'cv2') !== false) echo 'checked'; ?>> Acceso 2<br>
-        <!-- Agrega más checkboxes según tus necesidades -->
-
-        <button type="submit">Guardar cambios</button>
-    </form>
+							</div>
 							</div>
 						</div>
 					</div>

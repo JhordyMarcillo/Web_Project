@@ -356,18 +356,19 @@ $result = $conn->query($sql);
         <div class="mdl-cell mdl-cell--12-col">
         <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Roles</legend>
         <br>
-         <?php
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            echo '<p><input type="checkbox" name="roles[]" value="' . $row["id"] . '"> ' . $row["nombre"];
-            echo ' <a href="ediciorol.php?id=' . $row["id"] . '">Editar</a></p>';
-        }
-    } else {
-        echo "No hay roles disponibles.";
+<?php
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        // Cambiar el value del checkbox para que envíe el nombre del rol en lugar del ID
+        echo '<p><input type="checkbox" name="roles[]" value="' . $row["nombre"] . '"> ' . $row["nombre"];
+        echo ' <a href="ediciorol.php?id=' . $row["id"] . '">Editar</a></p>';
     }
-    ?>
+} else {
+    echo "No hay roles disponibles.";
+}
+?>
 
-    <input type="submit" value="Guardar">
+
     </div>
 
 			<a href="Rol.php" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" style="margin-left: 12%;">
