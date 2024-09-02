@@ -1,8 +1,5 @@
 <?php
-session_start();
-$rol_id = $_SESSION['rol_id'];
-
-// Conectar a la base de datos
+// Conexión a la base de datos
 $servername = "localhost";
 $username = "admin";
 $password = "admin";
@@ -10,10 +7,12 @@ $dbname = "proyecto";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+// Verifica la conexión
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Conexión fallida: " . $conn->connect_error);
 }
 
+<<<<<<< HEAD
 // Obtener los accesos permitidos para ese rol
 $sql = "SELECT accesos FROM roles WHERE id = ?";
 $stmt = $conn->prepare($sql);
@@ -27,27 +26,34 @@ $sql = "SELECT id, nombre FROM roles";
 $result = $conn->query($sql);
 // Cerrar la conexión a la base de datos
 $conn->close();
+=======
+// Obtener los roles de la base de datos
+$sql = "SELECT id, nombre FROM roles";
+$result = $conn->query($sql);
+>>>>>>> 907ede4838e97103150498a41b292d87fee27392
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/sweetalert2.css">
-    <link rel="stylesheet" href="css/material.min.css">
-    <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
-    <script src="js/material.min.js"></script>
-    <script src="js/sweetalert2.min.js"></script>
-    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="js/main.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Administrators</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/sweetalert2.css">
+	<link rel="stylesheet" href="css/material.min.css">
+	<link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+	<script src="js/material.min.js" ></script>
+	<script src="js/sweetalert2.min.js" ></script>
+	<script src="js/jquery.mCustomScrollbar.concat.min.js" ></script>
+	<script src="js/main.js" ></script>
 </head>
 <body>
+<<<<<<< HEAD
     
     <section class="full-width navLateral">
         <div class="full-width navLateral-bg btn-menu"></div>
@@ -184,8 +190,165 @@ $conn->close();
                     </li>
                     <li class="full-width divider-menu-h"></li>
                     <?php endif; ?>
+=======
+	<section class="full-width navLateral">
+		<div class="full-width navLateral-bg btn-menu"></div>
+		<div class="full-width navLateral-body">
+			<div class="full-width navLateral-body-logo text-center tittles">
+				<i class="zmdi zmdi-close btn-menu"></i> Inventario
+			</div>
+			<figure class="full-width navLateral-body-tittle-menu">
+				<div>
+					<img src="assets/img/avatar-male.png" alt="Avatar" class="img-responsive">
+				</div>
+				<figcaption>
+					<span>
+						Administrador<br>
+						<small>Administrador</small>
+					</span>
+				</figcaption>
+			</figure>
+			<nav class="full-width">
+				<ul class="full-width list-unstyle menu-principal">
+					<li class="full-width">
+						<a href="home.html" class="full-width">
+							<div class="navLateral-body-cl">
+								<i class="zmdi zmdi-view-dashboard"></i>
+							</div>
+							<div class="navLateral-body-cr">
+								Página Principal
+							</div>
+						</a>
+					</li>
+					<li class="full-width divider-menu-h"></li>
+					<li class="full-width divider-menu-h"></li>
+					<li class="full-width">
+						<a href="#!" class="full-width btn-subMenu">
+							<div class="navLateral-body-cl">
+								<i class="zmdi zmdi-face"></i>
+							</div>
+							<div class="navLateral-body-cr">
+								Usuarios
+							</div>
+							<span class="zmdi zmdi-chevron-left"></span>
+						</a>
+						<ul class="full-width menu-principal sub-menu-options">
+							<li class="full-width">
+								<a href="admin.php" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-account"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Agregar Usuarios
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="client.php" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-accounts"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Modificar usuarios
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="Delete.php" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-account"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Eliminar Usuarios
+									</div>
+								</a>
+							</li>
+							
+						</ul>
+					</li>
+					<li class="full-width divider-menu-h"></li>
+					<li class="full-width">
+						<a href="products.php" class="full-width">
+							<div class="navLateral-body-cl">
+								<i class="zmdi zmdi-washing-machine"></i>
+							</div>
+							<div class="navLateral-body-cr">
+								Productos
+							</div>
+						</a>
+					</li>
+>>>>>>> 907ede4838e97103150498a41b292d87fee27392
 					
+					<li class="full-width divider-menu-h"></li>
+					<li class="full-width">
+						<a href="#!" class="full-width btn-subMenu">
+							<div class="navLateral-body-cl">
+								<i class="zmdi zmdi-face"></i>
+							</div>
+							<div class="navLateral-body-cr">
+								Proveedores
+							</div>
+							<span class="zmdi zmdi-chevron-left"></span>
+						</a>
+						<ul class="full-width menu-principal sub-menu-options">
+							<li class="full-width">
+								<a href="providers.html" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-account"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Agregar Prooveedor
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="mostrarProviders.php" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-accounts"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Ver Prooveedores
+									</div>
+								</a>
+							</li>							
+						</ul>
+					</li>
+					<li class="full-width divider-menu-h"></li>
+					<li class="full-width">
+						<a href="#!" class="full-width btn-subMenu">
+							<div class="navLateral-body-cl">
+								<i class="zmdi zmdi-shopping-cart"></i>
+							</div>
+							<div class="navLateral-body-cr">
+								Ventas
+							</div>
+							<span class="zmdi zmdi-chevron-left"></span>
+						</a>
+						<ul class="full-width menu-principal sub-menu-options">
+							<li class="full-width">
+								<a href="sales.html" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-shopping-cart"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Lista de Ventas
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="inventory.html" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-shopping-cart-add"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Realizar una Venta
+									</div>
+								</a>
+							</li>							
+						</ul>
+					</li>
 					
+<<<<<<< HEAD
                     <?php if (in_array('Venta', $accesosPermitidos)): ?>
                     <li class="full-width">
                         <a href="#!" class="full-width btn-subMenu">
@@ -258,6 +421,58 @@ $conn->close();
             </nav>
         </div>
     </section><!-- pageContent -->
+=======
+					<li class="full-width divider-menu-h"></li>
+					<li class="full-width">
+						<a href="#!" class="full-width btn-subMenu">
+							<div class="navLateral-body-cl">
+								<i class="zmdi zmdi-collection-item"></i>
+							</div>
+							<div class="navLateral-body-cr">
+								Reportes
+							</div>
+							<span class="zmdi zmdi-chevron-left"></span>
+						</a>
+						<ul class="full-width menu-principal sub-menu-options">
+							<li class="full-width">
+								<a href="ReportesProveedores.php" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-truck"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Reportes de proveedores
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="ReportesVentas.html" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-collection-item-2"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Reportes de ventas
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="reporteProductos.php" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-collection-bookmark"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Reportes de productos
+									</div>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</section>
+	
+	<!-- pageContent -->
+>>>>>>> 907ede4838e97103150498a41b292d87fee27392
 	<section class="full-width pageContent">
 		<!-- navBar -->
 		<div class="full-width navBar">
@@ -398,8 +613,8 @@ $conn->close();
 <?php
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        // Cambiar el value del checkbox para que envíe el ID del rol en lugar del nombre
-        echo '<p><input type="checkbox" name="roles[]" value="' . $row["id"] . '"> ' . $row["nombre"];
+        // Cambiar el value del checkbox para que envíe el nombre del rol en lugar del ID
+        echo '<p><input type="checkbox" name="roles[]" value="' . $row["nombre"] . '"> ' . $row["nombre"];
         echo ' <a href="ediciorol.php?id=' . $row["id"] . '">Editar</a></p>';
     }
 } else {
