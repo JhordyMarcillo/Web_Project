@@ -11,12 +11,17 @@
 	<link rel="stylesheet" href="css/material-design-iconic-font.min.css">
 	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
 	<link rel="stylesheet" href="css/main.css">
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<link href="css/stilp.css" rel="stylesheet" type="text/css">
+	
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
 	<script src="js/material.min.js" ></script>
 	<script src="js/sweetalert2.min.js" ></script>
 	<script src="js/jquery.mCustomScrollbar.concat.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 	<script src="js/main.js" ></script>
+	<script src="pdf_fact.js"></script>
+	
 </head>
 <body>
 	
@@ -188,88 +193,62 @@
 			</div>
 			<div class="full-width header-well-text">
 				<p class="text-condensedLight">
-					<h3 style="margin-top: 8%; margin-left: 30%"> Productos</h3>
+					<h3 style="margin-top: 8%; margin-left: 30%"> Ventas</h3>
 				</p>
 			</div>
 		</section>
 		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-			<div class="mdl-tabs__tab-bar">
-				<a href="#tabNewProduct" class="mdl-tabs__tab is-active">Nuevo</a>
-				<a href="#tabListProducts" class="mdl-tabs__tab">Listado</a>
-			</div>
+			
 			<div class="mdl-tabs__panel is-active" id="tabNewProduct">
 				<div class="mdl-grid">
 					<div class="mdl-cell mdl-cell--12-col">
 						<div class="full-width panel mdl-shadow--2dp">
 							<div class="full-width panel-tittle bg-primary text-center tittles">
-								Nuevo Producto
+								Generar Venta
 							</div>
 							<div class="full-width panel-content">
-								<form id="form1" name="form1" method="post" action="conexionProducts.php" enctype="multipart/form-data">
-									<div class="mdl-grid">
-										<div class="mdl-cell mdl-cell--12-col">
-									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Informacion basica</legend><br>
-									    </div>
-										        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-												<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-													<input class="mdl-textfield__input" type="number" pattern="-?[0-9- ]*(\.[0-9]+)?" id="BarCode" name="BarCode">
-													<label class="mdl-textfield__label" for="BarCode">Codigo</label>
-													<span class="mdl-textfield__error">Codigo Incorrecto</span>
-												</div>
-											</div>
-										<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameProduct" name="NameProduct">
-                <label class="mdl-textfield__label" for="NameProduct">Nombre</label>
-                <span class="mdl-textfield__error">Nombre Invalido</span>
-            </div>
-        </div>
-        <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="StrockProduct" name="StrockProduct">
-                <label class="mdl-textfield__label" for="StrockProduct">Unidades</label>
-                <span class="mdl-textfield__error">Unidades Invalidas</span>
-            </div>
-        </div>
-        <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" pattern="-?[0-9.]*(\.[0-9]+)?" id="PriceProduct" name="PriceProduct">
-                <label class="mdl-textfield__label" for="PriceProduct">Precio</label>
-                <span class="mdl-textfield__error">Precio Invalido</span>
-            </div>
-        </div>
-        <div class="mdl-cell mdl-cell--12-col">
-            <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Categoria</legend><br>
-        </div>
-        <div class="mdl-cell mdl-cell--12-col">
-            <div class="mdl-textfield mdl-js-textfield">
-                <select class="mdl-textfield__input" id="Categoria" name="Categoria">
-                    <option value="" disabled="" selected="">Escoger una categoria</option>
-                    <option value="Frutas y Verduras">Frutas y Verduras</option>
-                    <option value="Lacteos">Lacteos</option>
-                    <option value="Bebidas">Bebidas</option>
-                    <option value="Congelados">Congelados</option>
-                    <option value="Carnes">Carnes</option>
-                    <option value="Confiteria">Confiteria</option>
-                    <option value="Snacks">Snacks</option>
-                </select>
-            </div>
-        </div>
-        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="markProduct" name="markProduct">
-                <label class="mdl-textfield__label" for="markProduct">Marca</label>
-                <span class="mdl-textfield__error">Marca Invalido</span>
-            </div>
-        </div>
-										
+								<form id="facturaForm">
+        <!-- Información del Cliente -->
+        <h2>Información del Cliente</h2>
+<label for="razonSocialCliente">Razón Social:</label>
+<input type="text" id="razonSocialCliente" name="razonSocialCliente" required><br><br>
+
+<label for="rucCliente">RUC o Cédula:</label>
+<input type="text" id="rucCliente" name="rucCliente" required pattern="[0-9]{10,13}" title="Ingrese un RUC o Cédula válida"><br><br>
+
+<label for="fechaEmision">Fecha de Emisión:</label>
+<input type="date" id="fechaEmision" name="fechaEmision" required><br><br>
+
+<!-- Información de la Factura -->
+<h2>Información de la Factura</h2>
+<label for="totalSinImpuestos">Total Sin Impuestos:</label>
+<input type="number" step="0.01" id="totalSinImpuestos" name="totalSinImpuestos" required><br><br>
+
+<label for="totalDescuento">Total Descuento:</label>
+<input type="number" step="0.01" id="totalDescuento" name="totalDescuento" required><br><br>
+
+<!-- Detalles de Productos -->
+<h2>Detalles de Productos</h2>
+<div id="productos">
+    <div class="producto">
+        <label for="descripcion_1">Descripción:</label>
+        <input type="text" id="descripcion_1" name="descripcion[]" required><br><br>
+
+        <label for="cantidad_1">Cantidad:</label>
+        <input type="number" step="1" id="cantidad_1" name="cantidad[]" required><br><br>
+
+        <label for="precioUnitario_1">Precio Unitario:</label>
+        <input type="number" step="0.01" id="precioUnitario_1" name="precioUnitario[]" required><br><br>
+
+        <label for="descuento_1">Descuento:</label>
+        <input type="number" step="0.01" id="descuento_1" name="descuento[]" value="0.00" required><br><br>
     </div>
-    <p class="text-center">
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" type="submit">
-            <i class="zmdi zmdi-plus"></i>
-        </button>
-    </p>
-</form>
+</div>
+        <button type="button" onclick="agregarProducto()">Agregar Producto</button><br><br>
+
+        <!-- Generar PDF -->
+        <button type="button" onclick="generarPDF()">Generar Factura</button>
+    </form>
 							</div>
 						</div>
 					</div>
@@ -367,5 +346,98 @@
 			</div>
 		</div>
 	</section>
+	<script> 
+		function agregarProducto() {
+            const productosDiv = document.getElementById('productos');
+            const nuevoProducto = document.createElement('div');
+            nuevoProducto.classList.add('producto');
+
+            nuevoProducto.innerHTML = `
+                <label for="descripcion[]">Descripción:</label>
+                <input type="text" id="descripcion[]" name="descripcion[]" required><br><br>
+
+                <label for="cantidad[]">Cantidad:</label>
+                <input type="number" step="0.01" id="cantidad[]" name="cantidad[]" required><br><br>
+
+                <label for="precioUnitario[]">Precio Unitario:</label>
+                <input type="number" step="0.01" id="precioUnitario[]" name="precioUnitario[]" required><br><br>
+
+                <label for="descuento[]">Descuento:</label>
+                <input type="number" step="0.01" id="descuento[]" name="descuento[]" value="0.00" required><br><br>
+            `;
+
+            productosDiv.appendChild(nuevoProducto);
+        }
+
+        function generarPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Título de la Factura
+    doc.setFontSize(22);
+    doc.text('FACTURA', 105, 15, null, null, 'center');
+
+    // Información del Cliente
+    doc.setFontSize(16);
+    doc.text('Información del Cliente', 10, 30);
+    doc.setFontSize(12);
+    doc.text(`Razón Social: ${document.getElementById('razonSocialCliente').value}`, 10, 40);
+    doc.text(`RUC o Cédula: ${document.getElementById('rucCliente').value}`, 10, 50);
+    doc.text(`Fecha de Emisión: ${document.getElementById('fechaEmision').value}`, 10, 60);
+
+    // Información de la Factura
+    doc.setFontSize(16);
+    doc.text('Información de la Factura', 10, 80);
+    doc.setFontSize(12);
+    doc.text(`Total Sin Impuestos: ${document.getElementById('totalSinImpuestos').value}`, 10, 90);
+    doc.text(`Total Descuento: ${document.getElementById('totalDescuento').value}`, 10, 100);
+
+    // Detalles de Productos - Cabecera
+    doc.setFontSize(16);
+    doc.text('Detalles de Productos', 10, 120);
+    doc.setFontSize(12);
+    doc.line(10, 125, 200, 125); // Línea divisoria
+    doc.text('Descripción', 10, 130);
+    doc.text('Cantidad', 90, 130);
+    doc.text('Precio Unitario', 130, 130);
+    doc.text('Descuento', 170, 130);
+    doc.line(10, 135, 200, 135); // Línea divisoria
+
+    // Detalles de Productos - Filas
+    let yOffset = 140;
+    const productos = document.getElementsByClassName('producto');
+    for (let i = 0; i < productos.length; i++) {
+        const descripcion = productos[i].querySelector('input[name="descripcion[]"]').value;
+        const cantidad = productos[i].querySelector('input[name="cantidad[]"]').value;
+        const precioUnitario = productos[i].querySelector('input[name="precioUnitario[]"]').value;
+        const descuento = productos[i].querySelector('input[name="descuento[]"]').value;
+
+        doc.text(descripcion, 10, yOffset);
+        doc.text(cantidad, 90, yOffset);
+        doc.text(precioUnitario, 130, yOffset);
+        doc.text(descuento, 170, yOffset);
+
+        yOffset += 10;
+    }
+
+    // Total General
+    yOffset += 10;
+    doc.setFontSize(16);
+    doc.text('Totales', 10, yOffset);
+    doc.line(10, yOffset + 5, 200, yOffset + 5); // Línea divisoria
+    doc.setFontSize(12);
+    yOffset += 10;
+    doc.text(`Subtotal: ${document.getElementById('totalSinImpuestos').value}`, 10, yOffset);
+    yOffset += 10;
+    doc.text(`IVA: 12`, 10, yOffset);
+    yOffset += 10;
+    
+
+    // Guardar el PDF
+    doc.save('factura.pdf');
+}
+
+	</script>
+	
 </body>
 </html>
