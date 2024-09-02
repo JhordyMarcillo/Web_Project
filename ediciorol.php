@@ -23,6 +23,15 @@ $result = $stmt->get_result();
 $row = $result->fetch_assoc();
 $accesosPermitidos = explode(',', $row['accesos']);
 
+// Obtén el ID del rol a editar
+$id = $_GET['id'];
+
+// Consulta para obtener los datos del rol
+$sql = "SELECT * FROM roles WHERE id='$id'";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
 // Cerrar la conexión a la base de datos
 $conn->close();
 ?>
@@ -46,6 +55,7 @@ $conn->close();
     <script src="js/main.js"></script>
 </head>
 <body>
+    
     <section class="full-width navLateral">
         <div class="full-width navLateral-bg btn-menu"></div>
         <div class="full-width navLateral-body">
@@ -196,19 +206,9 @@ $conn->close();
                         </a>
                         <ul class="full-width menu-principal sub-menu-options">
                             
-                            <li class="full-width">
-                                <a href="sales.php" class="full-width">
-                                    <div class="navLateral-body-cl">
-                                        <i class="zmdi zmdi-shopping-cart"></i>
-                                    </div>
-                                    <div class="navLateral-body-cr">
-                                        Lista de Ventas
-                                    </div>
-                                </a>
-                            </li>
                             
                             <li class="full-width">
-                                <a href="inventory.php" class="full-width">
+                                <a href="Ventas.html" class="full-width">
                                     <div class="navLateral-body-cl">
                                         <i class="zmdi zmdi-shopping-cart-add"></i>
                                     </div>
@@ -243,17 +243,6 @@ $conn->close();
                                     </div>
                                     <div class="navLateral-body-cr">
                                         Reportes de proveedores
-                                    </div>
-                                </a>
-                            </li>
-                            
-                            <li class="full-width">
-                                <a href="ReportesVentas.html" class="full-width">
-                                    <div class="navLateral-body-cl">
-                                        <i class="zmdi zmdi-collection-item-2"></i>
-                                    </div>
-                                    <div class="navLateral-body-cr">
-                                        Reportes de ventas
                                     </div>
                                 </a>
                             </li>
