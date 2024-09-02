@@ -26,14 +26,21 @@ $userPassword = $_POST['passwordAdmin']; // Contraseña en texto plano, se encri
 // Encriptar la contraseña
 $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
 
+// Obtener el rol seleccionado
+$rol_id = null;
+if (isset($_POST['roles'])) {
+    // Suponiendo que solo se puede seleccionar un rol, tomamos el primer valor del array
+    $rol_id = $_POST['roles'][0];
+}
+
 try {
     // Iniciar la transacción
     $conn->begin_transaction();
 
     // Insertar en la tabla cliente
-    $stmt = $conn->prepare("INSERT INTO cliente (cedula, nombre, apellido, direccion, telefono, correo, estadoCivil, fechaNacimiento, user, password) 
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssssss", $cedula, $nombre, $apellidos, $direccion, $telefono, $correo, $estadoCivil, $fechaNacimiento, $user, $hashedPassword);
+    $stmt = $conn->prepare("INSERT INTO cliente (cedula, nombre, apellido, direccion, telefono, correo, estadoCivil, fechaNacimiento, user, password, rol_id) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssssssi", $cedula, $nombre, $apellidos, $direccion, $telefono, $correo, $estadoCivil, $fechaNacimiento, $user, $hashedPassword, $rol_id);
     $stmt->execute();
 
     // Confirmar la transacción

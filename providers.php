@@ -282,7 +282,7 @@ $conn->close();
 		<div class="full-width navBar">
 			<div class="full-width navBar-options">
 				<i class="zmdi zmdi-swap btn-menu" id="btn-menu"></i>	
-				<div class="mdl-tooltip" for="btn-menu">Mostrar / Esconder menu</div>
+				<div class="mdl-tooltip" for="btn-menu">Mostrar / Esconder MENU</div>
 				<nav class="navBar-options-list">
 					<ul class="list-unstyle">
 						<li class="btn-Notification" id="notifications">
@@ -305,61 +305,88 @@ $conn->close();
 		</div>
 		<section class="full-width header-well">
 			<div class="full-width header-well-icon">
-				<i class="zmdi zmdi-shopping-cart"></i>
+				<i class="zmdi zmdi-truck"></i>
 			</div>
 			<div class="full-width header-well-text">
 				<p class="text-condensedLight">
-					<h3 style="margin-top: 8%; margin-left: 30%"> Ventas</h3>
+				<h3 style="margin-top: 8%; margin-left: 10%"> Ingresar un nuevo proveedor</h3>
 				</p>
 			</div>
 		</section>
-		<div class="full-width divider-menu-h"></div>
-		<div class="mdl-grid">
-			<div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
-				<div class="table-responsive">
-					<table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
-						<thead>
-							<tr>
-								<th class="mdl-data-table__cell--non-numeric">Date</th>
-								<th>Client</th>
-								<th>Payment</th>
-								<th>Total</th>
-								<th>Options</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td class="mdl-data-table__cell--non-numeric">11/04/2016</td>
-								<td>Client name</td>
-								<td>Credit</td>
-								<td>$77</td>
-								<td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-more"></i></button></td>
-							</tr>
-							<tr>
-								<td class="mdl-data-table__cell--non-numeric">11/04/2016</td>
-								<td>Client name</td>
-								<td>Credit</td>
-								<td>$77</td>
-								<td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-more"></i></button></td>
-							</tr>
-							<tr>
-								<td class="mdl-data-table__cell--non-numeric">11/04/2016</td>
-								<td>Client name</td>
-								<td>Credit</td>
-								<td>$77</td>
-								<td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-more"></i></button></td>
-							</tr>
-							<tr>
-								<td class="mdl-data-table__cell--non-numeric">11/04/2016</td>
-								<td>Client name</td>
-								<td>Credit</td>
-								<td>$77</td>
-								<td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class="zmdi zmdi-more"></i></button></td>
-							</tr>
-						</tbody>
-					</table>
+		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+			<div class="mdl-tabs__tab-bar">
+            <a href="#tabNewProvider" class="mdl-tabs__tab is-active">Nuevo Proveedor</a>
+        </div>
+			<div class="mdl-tabs__panel is-active" id="tabNewProvider">
+				<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--12-col">
+						<div class="full-width panel mdl-shadow--2dp">
+							<div class="full-width panel-tittle bg-primary text-center tittles">
+								Nuevo Proveedor
+							</div>
+							<div class="full-width panel-content">
+								<form id="form1" name="form1" method="post" action="conexionProviders.php">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos proveedor</legend><br>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="DNIProvider" name="DNIProvider">
+                <label class="mdl-textfield__label" for="DNIProvider">RUC</label>
+                <span class="mdl-textfield__error">Invalid number</span>
+            </div>
+        </div>
+
+        <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" pattern="-?[A-Za-z0-9 ]*(\.[0-9]+)?" id="NameProvider" name="NameProvider">
+                <label class="mdl-textfield__label" for="NameProvider">Compania</label>
+                <span class="mdl-textfield__error">Invalid name</span>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="addressProvider" name="addressProvider">
+                <label class="mdl-textfield__label" for="addressProvider">Direccion</label>
+                <span class="mdl-textfield__error">Invalid address</span>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="tel" pattern="-?[0-9+()- ]*(\.[0-9]+)?" id="phoneProvider" name="phoneProvider">
+                <label class="mdl-textfield__label" for="phoneProvider">Telefono</label>
+                <span class="mdl-textfield__error">Invalid phone number</span>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="email" id="emailProvider" name="emailProvider">
+                <label class="mdl-textfield__label" for="emailProvider">E-mail</label>
+                <span class="mdl-textfield__error">E-mail invalido</span>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="webProvider" name="webProvider">
+                <label class="mdl-textfield__label" for="webProvider">Web</label>
+                <span class="mdl-textfield__error">Invalid web address</span>
+            </div>
+        </div>
+    </div>
+    <p class="text-center">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary" type="submit">
+            <i class="zmdi zmdi-plus"></i>
+        </button>
+        <div class="mdl-tooltip" for="btn-addProvider">Add provider</div>
+    </p>
+</form>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
+	
 		</div>
 	</section>
 </body>

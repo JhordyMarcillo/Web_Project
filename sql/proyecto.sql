@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 02-09-2024 a las 06:04:01
+-- Tiempo de generación: 02-09-2024 a las 07:27:30
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -40,7 +40,7 @@ CREATE TABLE `cliente` (
   `fechaNacimiento` varchar(25) NOT NULL,
   `user` varchar(20) NOT NULL,
   `password` varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `rol` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `rol_id` int(11) NOT NULL,
   `estado` varchar(20) NOT NULL DEFAULT 'Activo'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -48,27 +48,10 @@ CREATE TABLE `cliente` (
 -- Volcado de datos para la tabla `cliente`
 --
 
-INSERT INTO `cliente` (`id`, `cedula`, `nombre`, `apellido`, `direccion`, `telefono`, `correo`, `estadoCivil`, `fechaNacimiento`, `user`, `password`, `rol`, `estado`) VALUES
-(1, '1234567890', 'paul', 'mora', 'sangolqui', '0999999999', 'ZZZZ@gmail.com', 'Casado', '2024-12-12', 'jhordy1', 'abc', '', 'Activo'),
-(2, '1234567891', 'Jhory', 'marcillo', 'sangolqui', '0999999998', 'b@gmail.com', 'Soltero', '2003-12-12', 'jeffrey1', '123', '', 'Inactivo'),
-(3, '1234567890', 'Jhordy', 'Marcillo', 'aaaaa', '1111111111', 'jhordypaulsb2@gmail.com', 'Casado', '2002-12-12', 'jhordy123', '123', '', 'Activo'),
-(4, '1234567890', 'Paul', 'Mora', 'Naranjal, casa ploma', '0995743333', 'iiii@gmail.com', 'Viudo', '2024-09-05', 'aaa', '123', '', 'Activo'),
-(6, '1234567890', 'Jhordy', 'Marcillo', 'aaaaa', '1111111111', 'jhordypaulsb2@gmail.com', 'Casado', '2024-09-10', 'jhordy123', '123', '', 'Activo'),
-(7, '1234567890', 'Jhordy', 'Marcillo', 'aaaaa', '1111111111', 'jhordypaulsb2@gmail.com', 'Casado', '2024-09-10', 'jhordy123', '123', '', 'Activo'),
-(8, '1234567890', 'Jhordy', 'Marcillo', 'aaaaa', '1111111111', 'jhordypaulsb2@gmail.com', 'Casado', '2024-09-10', 'jhordy124', '123', '', 'Activo'),
-(9, '1234567890', 'AAAAA', 'Marcillo', 'AAAAA', '1111111111', 'sAA@hotmail.com', 'Casado', '2024-09-04', 'AAA', 'AA123', '', 'Activo'),
-(10, '1234567890', 'AAAAA', 'Marcillo', 'AAAAA', '1111111111', 'sAA@hotmail.com', 'Casado', '2024-09-03', 'AAA', '123', '', 'Activo'),
-(11, '1234567890', 'BBBB', 'Marcillo', 'BBB', '1111111111', 'sAA@hotmail.com', 'Casado', '', 'BBB', '$BB123', '', 'Activo'),
-(12, '1234567890', 'BBBB', 'Marcillo', 'BBB', '1111111111', 'sAA@hotmail.com', 'Casado', '', 'BBB', '$', '', 'Activo'),
-(13, '1234567891', 'Paul', 'AA', 'AAAB1', '099999999', 'aaa@gmail.com', 'Casado', '2024-09-19', 'pAUL', '123', 'Administrador 1', 'Activo'),
-(14, '1212', 'asas', 'asasa', 'BBB', '121212', 'sAA@hotmail.com', 'Casado', '2024-09-04', 'BBB', '$2y$10$16CfgRbDIaiHNRun2XzhY.LBTq2kxOWqeNN7H.1Dt0HlK4BOuLiwq', 'Administrador 1', 'Activo'),
-(15, '11111', 'ZZZZ', 'ZZZZ', 'ZZZZ', '77777', 'ZZZZ@gmail.com', 'Viudo', '2024-09-19', '', '', '', 'Activo'),
-(16, '121212', 'QQQ', 'QQQ', 'ZZZZ', '88888', 'ZZZZ@gmail.com', 'Viudo', '', '', '', '', 'Activo'),
-(17, '123', 'QQQ', 'QQQ', 'ZZZZ', '88888', 'ZZZZ@gmail.com', 'Viudo', '', '', '', '', 'Activo'),
-(18, '1234567890', 'Jhordy', 'Marcillo', 'Gral. Calicuchima', '09999999', 'joaa@gmail.com', 'Casado', '2011-06-15', '', '', '', 'Activo'),
-(19, '123', 'admin', 'admin', 'admin', '9999999', 'admin@gmail.com', 'Casado', '2024-09-04', '', '', '', 'Activo'),
-(20, '09999', 'admin', 'admin', 'admin', '9999999', 'admin@gmail.com', 'Casado', '2024-09-03', '', '', '', 'Activo'),
-(21, '9999', 'HHHH', 'HHHH', 'HHH', '5656565', 'HHHH@GMAIL.COM', 'Soltero', '2024-09-11', '', '', '', 'Activo');
+INSERT INTO `cliente` (`id`, `cedula`, `nombre`, `apellido`, `direccion`, `telefono`, `correo`, `estadoCivil`, `fechaNacimiento`, `user`, `password`, `rol_id`, `estado`) VALUES
+(22, '123', 'admin', 'admin', 'admin', '9999999', 'admin@gmail.com', 'Casado', '2024-09-04', 'admin', '$2y$10$NZlRpK8O2tu3PatEyd7q3uTNS4kiCra9stOkmYQ7.lmf3X/tlcqfa', 1, 'Activo'),
+(23, '999', 'AAAAA', 'AAA', 'aaaaa', '9999', 'AA@GMAIL.COM', 'Casado', '2024-09-06', 'AAA', '$2y$10$taQ5lnDvhAQ5spyhId.Nd.6uUs2uf2kHdeuuf/cGyVIUHQL6zAO.q', 1, 'Activo'),
+(27, '9998127662', 'Jhordy', 'Jhordy', 'ashash', '5656565', 'j@gmail.com', 'Casado', '2003-12-12', 'Jeffrey1', '$2y$10$YPcn3GaglNWISGltVjRg2uYdyuqIZCM8G8PMcm0ggmTJAqigX7MBK', 2, 'Activo');
 
 -- --------------------------------------------------------
 
@@ -88,8 +71,6 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `nombre`, `user`, `password`) VALUES
-(1, 'paul', 'paul1', 'abc'),
-(2, 'jeffrey', 'jeffrey1', '123'),
 (8, '', 'admin', '$2y$10$9NPpVrpzPsqhD.7y7UiF4uhC2vzYx0w4KwYoqJgO9QmrLkuLB4RSK'),
 (9, '', 'QQQ', '$2y$10$5gR0b3xrRXZeuyVEBO4Zve.80np5mwSFaCh57Vq6mtPxJzUVFx6tC'),
 (10, '', 'QQQ', '$2y$10$h/6tYjyTcKgCtAYTHEI.m.KpK.80PK2MBU1NGV4ckNjM0YDXTlvam'),
@@ -165,9 +146,9 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `nombre`, `descripcion`, `accesos`) VALUES
-(1, 'Administrador 1', 'sjdaksjafhj ksajdkja', 'Agregar usuarios,Modificar Usuarios,Eliminar Usuarios,Productos,Ventas,Agregar proveedor,Ver Proveedores,Inventario,Reportes'),
-(2, 'Role 2', 'jdakbaf jkasbkjaf asbkjafs', 'Agregar usuarios,Modificar Usuarios,Inventario,Reportes'),
-(9, 'Rol 34', 'sandkanj fkdfjakn', 'Agregar usuarios,Eliminar Usuarios,Agregar usuarios');
+(1, 'Administrador 1', 'Administrador de la tienda', 'Agregar usuarios,Modificar Usuarios,Eliminar Usuarios,Productos,Ventas,Agregar proveedor,Ver Proveedores,Inventario,Reportes'),
+(2, 'Bodegero', 'bodegero que puede ver los inventarios y reportes', 'Inventario,Reportes'),
+(9, 'Tienda', 'Personal de la tienda', 'Ventas');
 
 --
 -- Índices para tablas volcadas
@@ -212,7 +193,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `login`
