@@ -1,4 +1,6 @@
 <?php
+session_start(); // Iniciar la sesión
+
 $servername = "localhost";
 $username = "admin";
 $password = "admin";
@@ -15,9 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pass = trim($_POST['password']);
     
     if (!empty($user) && !empty($pass)) {
-        // Preparamos la consulta para obtener el hash de la contraseña
-        $sql = "SELECT * FROM login WHERE user = ?";
+        $sql = "SELECT * FROM cliente WHERE TRIM(user) = ?";
         $stmt = $conn->prepare($sql);
+        
         if ($stmt) {
             $stmt->bind_param("s", $user);
             $stmt->execute();
@@ -27,10 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $user_data = $result->fetch_assoc();
                 $hashedPassword = $user_data['password'];
                 
-                // Verificamos la contraseña en texto plano contra el hash almacenado
                 if (password_verify($pass, $hashedPassword)) {
+                    // Guardar el rol del usuario en la sesión
+                    $_SESSION['rol_id'] = $user_data['rol_id'];
+                    
                     echo "<script>
-                    window.location.href='home.html';
+                    window.location.href='home.php';
                     </script>";
                 } else {
                     echo "<script>alert('Contraseña incorrecta');
@@ -42,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             $stmt->close();
         } else {
-            echo "<script>alert('Error en la consulta: ');
+            echo "<script>alert('Error en la consulta.');
             window.location.href='index.html'</script>";
         }
     } else {

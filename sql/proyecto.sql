@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 02-09-2024 a las 01:34:17
+-- Tiempo de generación: 02-09-2024 a las 06:04:01
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -53,7 +53,6 @@ INSERT INTO `cliente` (`id`, `cedula`, `nombre`, `apellido`, `direccion`, `telef
 (2, '1234567891', 'Jhory', 'marcillo', 'sangolqui', '0999999998', 'b@gmail.com', 'Soltero', '2003-12-12', 'jeffrey1', '123', '', 'Inactivo'),
 (3, '1234567890', 'Jhordy', 'Marcillo', 'aaaaa', '1111111111', 'jhordypaulsb2@gmail.com', 'Casado', '2002-12-12', 'jhordy123', '123', '', 'Activo'),
 (4, '1234567890', 'Paul', 'Mora', 'Naranjal, casa ploma', '0995743333', 'iiii@gmail.com', 'Viudo', '2024-09-05', 'aaa', '123', '', 'Activo'),
-(5, '', '', '', '', '', '', '', '', '', '', '', 'Activo'),
 (6, '1234567890', 'Jhordy', 'Marcillo', 'aaaaa', '1111111111', 'jhordypaulsb2@gmail.com', 'Casado', '2024-09-10', 'jhordy123', '123', '', 'Activo'),
 (7, '1234567890', 'Jhordy', 'Marcillo', 'aaaaa', '1111111111', 'jhordypaulsb2@gmail.com', 'Casado', '2024-09-10', 'jhordy123', '123', '', 'Activo'),
 (8, '1234567890', 'Jhordy', 'Marcillo', 'aaaaa', '1111111111', 'jhordypaulsb2@gmail.com', 'Casado', '2024-09-10', 'jhordy124', '123', '', 'Activo'),
@@ -68,7 +67,8 @@ INSERT INTO `cliente` (`id`, `cedula`, `nombre`, `apellido`, `direccion`, `telef
 (17, '123', 'QQQ', 'QQQ', 'ZZZZ', '88888', 'ZZZZ@gmail.com', 'Viudo', '', '', '', '', 'Activo'),
 (18, '1234567890', 'Jhordy', 'Marcillo', 'Gral. Calicuchima', '09999999', 'joaa@gmail.com', 'Casado', '2011-06-15', '', '', '', 'Activo'),
 (19, '123', 'admin', 'admin', 'admin', '9999999', 'admin@gmail.com', 'Casado', '2024-09-04', '', '', '', 'Activo'),
-(20, '09999', 'admin', 'admin', 'admin', '9999999', 'admin@gmail.com', 'Casado', '2024-09-03', '', '', '', 'Activo');
+(20, '09999', 'admin', 'admin', 'admin', '9999999', 'admin@gmail.com', 'Casado', '2024-09-03', '', '', '', 'Activo'),
+(21, '9999', 'HHHH', 'HHHH', 'HHH', '5656565', 'HHHH@GMAIL.COM', 'Soltero', '2024-09-11', '', '', '', 'Activo');
 
 -- --------------------------------------------------------
 
@@ -91,7 +91,11 @@ INSERT INTO `login` (`id`, `nombre`, `user`, `password`) VALUES
 (1, 'paul', 'paul1', 'abc'),
 (2, 'jeffrey', 'jeffrey1', '123'),
 (8, '', 'admin', '$2y$10$9NPpVrpzPsqhD.7y7UiF4uhC2vzYx0w4KwYoqJgO9QmrLkuLB4RSK'),
-(9, '', 'QQQ', '$2y$10$5gR0b3xrRXZeuyVEBO4Zve.80np5mwSFaCh57Vq6mtPxJzUVFx6tC');
+(9, '', 'QQQ', '$2y$10$5gR0b3xrRXZeuyVEBO4Zve.80np5mwSFaCh57Vq6mtPxJzUVFx6tC'),
+(10, '', 'QQQ', '$2y$10$h/6tYjyTcKgCtAYTHEI.m.KpK.80PK2MBU1NGV4ckNjM0YDXTlvam'),
+(11, '', '', '$2y$10$kl3Csk1U84SwG49tJzzCI.WGJK6VBWeamr37jm.j.qzvmLc.fpogS'),
+(12, '', '', '$2y$10$A.ezVUzZO93aOCl780RxT.ToArTNEhHlw14Rd4t.Og7WeQPK.P0hW'),
+(13, '', 'HHH', '$2y$10$My9kfDEPOQwlA0a3dT3zMeVrZ0EcH/lzxVq7XoXfaeEEvH56zD8.C');
 
 -- --------------------------------------------------------
 
@@ -208,13 +212,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`

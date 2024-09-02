@@ -31,18 +31,10 @@ try {
     $conn->begin_transaction();
 
     // Insertar en la tabla cliente
-    $stmt1 = $conn->prepare("INSERT INTO cliente (cedula, nombre, apellido, direccion, telefono, correo, estadoCivil, fechaNacimiento) 
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt1->bind_param("ssssssss", $cedula, $nombre, $apellidos, $direccion, $telefono, $correo, $estadoCivil, $fechaNacimiento);
-    $stmt1->execute();
-
-    // Obtener el ID del último registro insertado
-    $last_id = $conn->insert_id;
-
-    // Insertar en la tabla login
-    $stmt2 = $conn->prepare("INSERT INTO login (user, password) VALUES (?, ?)");
-    $stmt2->bind_param("ss", $user, $hashedPassword);
-    $stmt2->execute();
+    $stmt = $conn->prepare("INSERT INTO cliente (cedula, nombre, apellido, direccion, telefono, correo, estadoCivil, fechaNacimiento, user, password) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssssss", $cedula, $nombre, $apellidos, $direccion, $telefono, $correo, $estadoCivil, $fechaNacimiento, $user, $hashedPassword);
+    $stmt->execute();
 
     // Confirmar la transacción
     $conn->commit();

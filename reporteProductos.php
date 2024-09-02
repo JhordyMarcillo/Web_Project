@@ -1,10 +1,13 @@
-
+<?php
+session_start();
+$rol_id = $_SESSION['rol_id'];
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Products</title>
+	<title>Home</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/sweetalert2.css">
 	<link rel="stylesheet" href="css/material.min.css">
@@ -19,7 +22,6 @@
 	<script src="js/main.js" ></script>
 </head>
 <body>
-	
 	<section class="full-width navLateral">
 		<div class="full-width navLateral-bg btn-menu"></div>
 		<div class="full-width navLateral-body">
@@ -50,7 +52,8 @@
 						</a>
 					</li>
 					<li class="full-width divider-menu-h"></li>
-					<li class="full-width divider-menu-h"></li>
+					
+					<?php if ($rol_id == 1): ?>
 					<li class="full-width">
 						<a href="#!" class="full-width btn-subMenu">
 							<div class="navLateral-body-cl">
@@ -92,10 +95,12 @@
 									</div>
 								</a>
 							</li>
-							
 						</ul>
 					</li>
 					<li class="full-width divider-menu-h"></li>
+					<?php endif; ?>
+					
+					<?php if ($rol_id == 1 || $rol_id == 2): ?>
 					<li class="full-width">
 						<a href="products.php" class="full-width">
 							<div class="navLateral-body-cl">
@@ -106,42 +111,10 @@
 							</div>
 						</a>
 					</li>
+					<li class="full-width divider-menu-h"></li>
+					<?php endif; ?>
 					
-					<li class="full-width divider-menu-h"></li>
-					<li class="full-width">
-						<a href="#!" class="full-width btn-subMenu">
-							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-face"></i>
-							</div>
-							<div class="navLateral-body-cr">
-								Proveedores
-							</div>
-							<span class="zmdi zmdi-chevron-left"></span>
-						</a>
-						<ul class="full-width menu-principal sub-menu-options">
-							<li class="full-width">
-								<a href="providers.html" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-account"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										Agregar Prooveedor
-									</div>
-								</a>
-							</li>
-							<li class="full-width">
-								<a href="mostrarProviders.php" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-accounts"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										Ver Prooveedores
-									</div>
-								</a>
-							</li>							
-						</ul>
-					</li>
-					<li class="full-width divider-menu-h"></li>
+					<?php if ($rol_id == 1 || $rol_id == 9): ?>
 					<li class="full-width">
 						<a href="#!" class="full-width btn-subMenu">
 							<div class="navLateral-body-cl">
@@ -175,8 +148,10 @@
 							</li>							
 						</ul>
 					</li>
-					
 					<li class="full-width divider-menu-h"></li>
+					<?php endif; ?>
+
+					<?php if ($rol_id == 1 || $rol_id == 2): ?>
 					<li class="full-width">
 						<a href="#!" class="full-width btn-subMenu">
 							<div class="navLateral-body-cl">
@@ -220,6 +195,8 @@
 							</li>
 						</ul>
 					</li>
+					<?php endif; ?>
+
 				</ul>
 			</nav>
 		</div>
