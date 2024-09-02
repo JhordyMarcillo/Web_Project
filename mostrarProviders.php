@@ -105,17 +105,7 @@
 							</div>
 						</a>
 					</li>
-					<li class="full-width divider-menu-h"></li>
-					<li class="full-width">
-						<a href="sales.html" class="full-width">
-							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-shopping-cart"></i>
-							</div>
-							<div class="navLateral-body-cr">
-								Ventas
-							</div>
-						</a>
-					</li>
+					
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
 						<a href="#!" class="full-width btn-subMenu">
@@ -152,25 +142,82 @@
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="inventory.html" class="full-width">
+						<a href="#!" class="full-width btn-subMenu">
 							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-store"></i>
+								<i class="zmdi zmdi-shopping-cart"></i>
 							</div>
 							<div class="navLateral-body-cr">
-								Inventario
+								Ventas
 							</div>
+							<span class="zmdi zmdi-chevron-left"></span>
 						</a>
+						<ul class="full-width menu-principal sub-menu-options">
+							<li class="full-width">
+								<a href="sales.html" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-shopping-cart"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Lista de Ventas
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="inventory.html" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-shopping-cart-add"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Realizar una Venta
+									</div>
+								</a>
+							</li>							
+						</ul>
 					</li>
+					
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="providers.html" class="full-width">
+						<a href="#!" class="full-width btn-subMenu">
 							<div class="navLateral-body-cl">
 								<i class="zmdi zmdi-collection-item"></i>
 							</div>
 							<div class="navLateral-body-cr">
 								Reportes
 							</div>
+							<span class="zmdi zmdi-chevron-left"></span>
 						</a>
+						<ul class="full-width menu-principal sub-menu-options">
+							<li class="full-width">
+								<a href="ReportesProveedores.php" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-truck"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Reportes de proveedores
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="ReportesVentas.html" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-collection-item-2"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Reportes de ventas
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="reporteProductos.php" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-collection-bookmark"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Reportes de productos
+									</div>
+								</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</nav>
@@ -261,39 +308,50 @@
 								// Mostrar la tabla con resultados
 								if ($result->num_rows > 0) {
 									echo "<style>
-											table {
-												margin: 40px auto;
-												width: 80%;
-												border-collapse: collapse;
-												font-size: 15px;
-												text-align: left;
-												box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-											}
-											th, td {
-												padding: 12px 15px;
-												border-bottom: 1px solid #ddd;
-											}
-											th {
-												background-color: #f8f8f8;
-												font-weight: bold;
-												color: #333;
-												text-align: center;
-											}
-											tr:nth-child(even) {
-												background-color: #f2f2f2;
-											}
-											tr:hover {
-												background-color: #e9e9e9;
-											}
-											a {
-												color: #ff6600;
-												text-decoration: none;
-												font-weight: bold;
-											}
-											a:hover {
-												text-decoration: underline;
-											}
-										</style>";
+    table {
+        margin: 40px auto;
+		margin-left: 110px;
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        text-align: left;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+        padding: 12px 20px;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #4CAF50;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+    }
+    td {
+        background-color: #f9f9f9;
+    }
+    tr:nth-child(even) td {
+        background-color: #f2f2f2;
+    }
+    tr:hover td {
+        background-color: #e0e0e0;
+    }
+    thead th {
+        border-bottom: 2px solid #4CAF50;
+    }
+    tfoot td {
+        font-weight: bold;
+        border-top: 2px solid #4CAF50;
+    }
+    a {
+        color: #2196F3;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>";
 
 									echo "<table>
 											<tr>

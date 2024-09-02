@@ -123,40 +123,7 @@ $result = $conn->query($sql);
 							</div>
 						</a>
 					</li>
-					<li class="full-width divider-menu-h"></li>
-					<li class="full-width">
-						<a href="#!" class="full-width btn-subMenu">
-							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-face"></i>
-							</div>
-							<div class="navLateral-body-cr">
-								Ventas
-							</div>
-							<span class="zmdi zmdi-chevron-left"></span>
-						</a>
-						<ul class="full-width menu-principal sub-menu-options">
-							<li class="full-width">
-								<a href="sales.html" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-account"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										Listado de Ventas
-									</div>
-								</a>
-							</li>
-							<li class="full-width">
-								<a href="client.php" class="full-width">
-									<div class="navLateral-body-cl">
-										<i class="zmdi zmdi-accounts"></i>
-									</div>
-									<div class="navLateral-body-cr">
-										Realizar una venta
-									</div>
-								</a>
-							</li>
-						</ul>
-					</li>
+					
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
 						<a href="#!" class="full-width btn-subMenu">
@@ -193,25 +160,82 @@ $result = $conn->query($sql);
 					</li>
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="inventory.html" class="full-width">
+						<a href="#!" class="full-width btn-subMenu">
 							<div class="navLateral-body-cl">
-								<i class="zmdi zmdi-store"></i>
+								<i class="zmdi zmdi-shopping-cart"></i>
 							</div>
 							<div class="navLateral-body-cr">
-								Inventario
+								Ventas
 							</div>
+							<span class="zmdi zmdi-chevron-left"></span>
 						</a>
+						<ul class="full-width menu-principal sub-menu-options">
+							<li class="full-width">
+								<a href="sales.html" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-shopping-cart"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Lista de Ventas
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="inventory.html" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-shopping-cart-add"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Realizar una Venta
+									</div>
+								</a>
+							</li>							
+						</ul>
 					</li>
+					
 					<li class="full-width divider-menu-h"></li>
 					<li class="full-width">
-						<a href="providers.html" class="full-width">
+						<a href="#!" class="full-width btn-subMenu">
 							<div class="navLateral-body-cl">
 								<i class="zmdi zmdi-collection-item"></i>
 							</div>
 							<div class="navLateral-body-cr">
 								Reportes
 							</div>
+							<span class="zmdi zmdi-chevron-left"></span>
 						</a>
+						<ul class="full-width menu-principal sub-menu-options">
+							<li class="full-width">
+								<a href="ReportesProveedores.php" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-truck"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Reportes de proveedores
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="ReportesVentas.html" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-collection-item-2"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Reportes de ventas
+									</div>
+								</a>
+							</li>
+							<li class="full-width">
+								<a href="reporteProductos.php" class="full-width">
+									<div class="navLateral-body-cl">
+										<i class="zmdi zmdi-collection-bookmark"></i>
+									</div>
+									<div class="navLateral-body-cr">
+										Reportes de productos
+									</div>
+								</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</nav>
