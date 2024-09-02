@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 02-09-2024 a las 07:27:30
+-- Tiempo de generación: 02-09-2024 a las 08:16:46
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -51,7 +51,8 @@ CREATE TABLE `cliente` (
 INSERT INTO `cliente` (`id`, `cedula`, `nombre`, `apellido`, `direccion`, `telefono`, `correo`, `estadoCivil`, `fechaNacimiento`, `user`, `password`, `rol_id`, `estado`) VALUES
 (22, '123', 'admin', 'admin', 'admin', '9999999', 'admin@gmail.com', 'Casado', '2024-09-04', 'admin', '$2y$10$NZlRpK8O2tu3PatEyd7q3uTNS4kiCra9stOkmYQ7.lmf3X/tlcqfa', 1, 'Activo'),
 (23, '999', 'AAAAA', 'AAA', 'aaaaa', '9999', 'AA@GMAIL.COM', 'Casado', '2024-09-06', 'AAA', '$2y$10$taQ5lnDvhAQ5spyhId.Nd.6uUs2uf2kHdeuuf/cGyVIUHQL6zAO.q', 1, 'Activo'),
-(27, '9998127662', 'Jhordy', 'Jhordy', 'ashash', '5656565', 'j@gmail.com', 'Casado', '2003-12-12', 'Jeffrey1', '$2y$10$YPcn3GaglNWISGltVjRg2uYdyuqIZCM8G8PMcm0ggmTJAqigX7MBK', 2, 'Activo');
+(27, '9998127662', 'Jhordy', 'Jhordy', 'ashash', '5656565', 'j@gmail.com', 'Casado', '2003-12-12', 'Jeffrey1', '$2y$10$YPcn3GaglNWISGltVjRg2uYdyuqIZCM8G8PMcm0ggmTJAqigX7MBK', 2, 'Activo'),
+(28, '12', 'www', 'www', 'ww', '12', 'ww@gmail.com', 'Casado', '2024-09-10', 'www', '$2y$10$1Kk.boiMtrHQ6h194kWVdeVi0.tlp6A/rJbGP/mi2GAXs3Y6eqvLO', 3, 'Activo');
 
 -- --------------------------------------------------------
 
@@ -146,9 +147,11 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `nombre`, `descripcion`, `accesos`) VALUES
-(1, 'Administrador 1', 'Administrador de la tienda', 'Agregar usuarios,Modificar Usuarios,Eliminar Usuarios,Productos,Ventas,Agregar proveedor,Ver Proveedores,Inventario,Reportes'),
-(2, 'Bodegero', 'bodegero que puede ver los inventarios y reportes', 'Inventario,Reportes'),
-(9, 'Tienda', 'Personal de la tienda', 'Ventas');
+(1, 'Administrador 1', 'Administrador de la tienda', 'Usuario,Producto,Proveedor,Venta,Reporte'),
+(2, 'Bodegero', 'bodegero que puede ver los inventarios y reportes', 'Producto,Reporte'),
+(3, 'Reportero', 'reportes de todo', 'Reporte'),
+(9, 'Tienda', 'Personal de la tienda', 'Venta'),
+(10, '', '', '');
 
 --
 -- Índices para tablas volcadas
@@ -193,7 +196,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de la tabla `login`
@@ -217,7 +220,7 @@ ALTER TABLE `proveedores`
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
