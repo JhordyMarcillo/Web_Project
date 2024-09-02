@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 01-09-2024 a las 18:55:09
+-- Tiempo de generación: 02-09-2024 a las 01:34:17
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -39,7 +39,7 @@ CREATE TABLE `cliente` (
   `estadoCivil` varchar(20) NOT NULL,
   `fechaNacimiento` varchar(25) NOT NULL,
   `user` varchar(20) NOT NULL,
-  `password` varchar(100) NOT NULL,
+  `password` varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `rol` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `estado` varchar(20) NOT NULL DEFAULT 'Activo'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -49,10 +49,10 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`id`, `cedula`, `nombre`, `apellido`, `direccion`, `telefono`, `correo`, `estadoCivil`, `fechaNacimiento`, `user`, `password`, `rol`, `estado`) VALUES
-(1, '1234567890', 'paul', 'mora', 'sangolqui', '0999999999', 'a@gmail.com', 'Casado', '2024-12-12', 'jhordy1', 'abc', '', 'Activo'),
+(1, '1234567890', 'paul', 'mora', 'sangolqui', '0999999999', 'ZZZZ@gmail.com', 'Casado', '2024-12-12', 'jhordy1', 'abc', '', 'Activo'),
 (2, '1234567891', 'Jhory', 'marcillo', 'sangolqui', '0999999998', 'b@gmail.com', 'Soltero', '2003-12-12', 'jeffrey1', '123', '', 'Inactivo'),
 (3, '1234567890', 'Jhordy', 'Marcillo', 'aaaaa', '1111111111', 'jhordypaulsb2@gmail.com', 'Casado', '2002-12-12', 'jhordy123', '123', '', 'Activo'),
-(4, '1234567890', 'Paul', 'Mora', 'Naranjal, casa ploma', '0995743333', 'iiii@gmail.com', '', '2024-09-05', 'aaa', '123', '', 'Activo'),
+(4, '1234567890', 'Paul', 'Mora', 'Naranjal, casa ploma', '0995743333', 'iiii@gmail.com', 'Viudo', '2024-09-05', 'aaa', '123', '', 'Activo'),
 (5, '', '', '', '', '', '', '', '', '', '', '', 'Activo'),
 (6, '1234567890', 'Jhordy', 'Marcillo', 'aaaaa', '1111111111', 'jhordypaulsb2@gmail.com', 'Casado', '2024-09-10', 'jhordy123', '123', '', 'Activo'),
 (7, '1234567890', 'Jhordy', 'Marcillo', 'aaaaa', '1111111111', 'jhordypaulsb2@gmail.com', 'Casado', '2024-09-10', 'jhordy123', '123', '', 'Activo'),
@@ -60,7 +60,15 @@ INSERT INTO `cliente` (`id`, `cedula`, `nombre`, `apellido`, `direccion`, `telef
 (9, '1234567890', 'AAAAA', 'Marcillo', 'AAAAA', '1111111111', 'sAA@hotmail.com', 'Casado', '2024-09-04', 'AAA', 'AA123', '', 'Activo'),
 (10, '1234567890', 'AAAAA', 'Marcillo', 'AAAAA', '1111111111', 'sAA@hotmail.com', 'Casado', '2024-09-03', 'AAA', '123', '', 'Activo'),
 (11, '1234567890', 'BBBB', 'Marcillo', 'BBB', '1111111111', 'sAA@hotmail.com', 'Casado', '', 'BBB', '$BB123', '', 'Activo'),
-(12, '1234567890', 'BBBB', 'Marcillo', 'BBB', '1111111111', 'sAA@hotmail.com', 'Casado', '', 'BBB', '$', '', 'Activo');
+(12, '1234567890', 'BBBB', 'Marcillo', 'BBB', '1111111111', 'sAA@hotmail.com', 'Casado', '', 'BBB', '$', '', 'Activo'),
+(13, '1234567891', 'Paul', 'AA', 'AAAB1', '099999999', 'aaa@gmail.com', 'Casado', '2024-09-19', 'pAUL', '123', 'Administrador 1', 'Activo'),
+(14, '1212', 'asas', 'asasa', 'BBB', '121212', 'sAA@hotmail.com', 'Casado', '2024-09-04', 'BBB', '$2y$10$16CfgRbDIaiHNRun2XzhY.LBTq2kxOWqeNN7H.1Dt0HlK4BOuLiwq', 'Administrador 1', 'Activo'),
+(15, '11111', 'ZZZZ', 'ZZZZ', 'ZZZZ', '77777', 'ZZZZ@gmail.com', 'Viudo', '2024-09-19', '', '', '', 'Activo'),
+(16, '121212', 'QQQ', 'QQQ', 'ZZZZ', '88888', 'ZZZZ@gmail.com', 'Viudo', '', '', '', '', 'Activo'),
+(17, '123', 'QQQ', 'QQQ', 'ZZZZ', '88888', 'ZZZZ@gmail.com', 'Viudo', '', '', '', '', 'Activo'),
+(18, '1234567890', 'Jhordy', 'Marcillo', 'Gral. Calicuchima', '09999999', 'joaa@gmail.com', 'Casado', '2011-06-15', '', '', '', 'Activo'),
+(19, '123', 'admin', 'admin', 'admin', '9999999', 'admin@gmail.com', 'Casado', '2024-09-04', '', '', '', 'Activo'),
+(20, '09999', 'admin', 'admin', 'admin', '9999999', 'admin@gmail.com', 'Casado', '2024-09-03', '', '', '', 'Activo');
 
 -- --------------------------------------------------------
 
@@ -72,7 +80,7 @@ CREATE TABLE `login` (
   `id` int(4) NOT NULL,
   `nombre` varchar(15) NOT NULL,
   `user` varchar(15) NOT NULL,
-  `password` varchar(15) NOT NULL
+  `password` varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -81,7 +89,9 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`id`, `nombre`, `user`, `password`) VALUES
 (1, 'paul', 'paul1', 'abc'),
-(2, 'jeffrey', 'jeffrey1', '123');
+(2, 'jeffrey', 'jeffrey1', '123'),
+(8, '', 'admin', '$2y$10$9NPpVrpzPsqhD.7y7UiF4uhC2vzYx0w4KwYoqJgO9QmrLkuLB4RSK'),
+(9, '', 'QQQ', '$2y$10$5gR0b3xrRXZeuyVEBO4Zve.80np5mwSFaCh57Vq6mtPxJzUVFx6tC');
 
 -- --------------------------------------------------------
 
@@ -198,13 +208,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de la tabla `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`

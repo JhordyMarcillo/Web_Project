@@ -212,7 +212,7 @@ if ($conexion->connect_error) {
 								Nuevo Rol
 							</div>
 							<div class="full-width panel-content">
-								<form action="procesar_rol.php" method="POST">
+								<form action="procesar_rol.php" method="POST" onsubmit="return validateForm()">
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--12-col">
             <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Ingrese los datos del rol</legend>
@@ -335,7 +335,7 @@ if ($conexion->connect_error) {
             }
         }
     </script>
-
+<script src="js/validacionformularioeditar.js" type="text/javascript" ></script>
 </html>
 <?php
 $conexion->close();

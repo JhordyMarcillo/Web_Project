@@ -267,7 +267,7 @@ $result = $conn->query($sql);
 								Nuevo usuario
 							</div>
 							<div class="full-width panel-content">
-								<form id="form1" name="form1" method="post" action="conexion.php">
+								<form id="form1" name="form1" method="post" action="conexion.php" onsubmit="return validateForm()">
 									<div class="mdl-grid">
 										<div class="mdl-cell mdl-cell--12-col">
 									        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Datos del usuario</legend><br>
@@ -401,6 +401,7 @@ if ($result->num_rows > 0) {
 		</div>
 	</section>
 </body>
+<script src="js/validacionformularioeditar.js" type="text/javascript" ></script>
 </html>
 
 <?php

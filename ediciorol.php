@@ -226,7 +226,7 @@ if ($result->num_rows > 0) {
 								Edicion de Rol
 							</div>
 							<div class="full-width panel-content">
-<form action="procesar_edicion_rol.php" method="POST">
+<form action="procesar_edicion_rol.php" method="POST" onsubmit="return validarFormulario();">
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--12-col">
             <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp; Editar Rol</legend>
@@ -342,7 +342,7 @@ if ($result->num_rows > 0) {
             }
         }
     </script>
-
+<script src="js/validacionformularioeditar.js" type="text/javascript"></script>
 </html>
 
 <?php

@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pass = trim($_POST['password']);
     
     if (!empty($user) && !empty($pass)) {
+        // Preparamos la consulta para obtener el hash de la contraseña
         $sql = "SELECT * FROM login WHERE user = ?";
         $stmt = $conn->prepare($sql);
         if ($stmt) {
@@ -24,7 +25,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             if ($result->num_rows === 1) {
                 $user_data = $result->fetch_assoc();
-                if ($pass === $user_data['password']) {
+                $hashedPassword = $user_data['password'];
+                
+                // Verificamos la contraseña en texto plano contra el hash almacenado
+                if (password_verify($pass, $hashedPassword)) {
                     echo "<script>
                     window.location.href='home.html';
                     </script>";

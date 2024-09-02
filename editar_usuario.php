@@ -221,7 +221,7 @@
 					<div class="mdl-cell mdl-cell--12-col">
 						<div class="full-width panel mdl-shadow--2dp">
 							<div class="full-width panel-content">
-								<form>
+								<form id="form1" name="form1" method="post" action="update.php">
 									
 									<?php
 $servername = "localhost";
@@ -307,8 +307,15 @@ if (isset($_GET['edit_id'])) {
                 <input type='text' name='telefono' value='" . $row['telefono'] . "'>
                 <label>Correo:</label>
                 <input type='email' name='correo' value='" . $row['correo'] . "'>
-                <label>Estado Civil:</label>
-                <input type='text' name='estadoCivil' value='" . $row['estadoCivil'] . "'>
+                <label for='select' style='color: #A3A3A3; font-family: sans-serif; font-size: 15px;' class='mdl-typography--menu'>
+                            Estado Civil: 
+                            <select style='margin-left: 6%; display: inline-block; width: 40%; padding: 6px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; box-sizing: border-box;' name='estadoCivil' id='estado'>
+                                <option value='' disabled>Escoja una opción</option>
+                                <option value='Soltero' " . ($row['estadoCivil'] == 'Soltero' ? 'selected' : '') . ">Soltero</option>
+                                <option value='Casado' " . ($row['estadoCivil'] == 'Casado' ? 'selected' : '') . ">Casado</option>
+                                <option value='Viudo' " . ($row['estadoCivil'] == 'Viudo' ? 'selected' : '') . ">Viudo</option>
+                            </select>
+                        </label> 
                 <label>Fecha de Nacimiento:</label>
                 <input type='date' name='fechaNacimiento' value='" . $row['fechaNacimiento'] . "'>
                 <input type='submit' name='update' value='Guardar cambios'>
